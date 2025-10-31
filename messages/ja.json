@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "title": "Grayの履歴書",
+    "description": "これはGrayの個人履歴書サイトです"
+  },
+  "navbar": {
+    "skill": "スキル",
+    "portfolio": "ポートフォリオ",
+    "japanese": "日本語",
+    "chinese": "中国語",
+    "english": "英語",
+    "language": "言語",
+    "setting": "設定"
+  },
+  "home": {
+    "self1": "こんにちは！テクノロジーを愛する開発者、Gray Yuanです。（以前はGustyと名乗っていましたが、発音が難しく、少し変な感じもしたので…）",
+    "self2": "私はWEBフルスタック開発者として4年の経験があり、同時にAndroidやWindowsアプリ開発にも情熱を注いでおり、いくつかの小規模なプロジェクトも完成させました。趣味はゲーム、アニメ、漫画、映画で、これらはいつも新しいアイデアのインスピレーションを与えてくれます。週末にはジョギングもします。ハードな開発には体力も必要ですから。",
+    "self3": "もし私のスキルや経験にご興味をお持ちいただけましたら、お気軽にご連絡ください。よろしくお願いします！",
+    "experience1": "大学卒業",
+    "experience2": "兵役",
+    "experience3": "CAMオペレーターとして勤務",
+    "experience4": "資策会（TII）にて研修受講",
+    "experience5": "Javaエンジニアとして勤務",
+    "experience6": "台中にてJavaエンジニアとして勤務",
+    "experience7": "地元に戻りC#エンジニアとして勤務"
+  },
+  "skill": {
+    "react": "独学、及び実務での使用経験あり",
+    "java": "以前の主力スキルですが、しばらく触れていません",
+    "python": "簡単なツール作成に少し使用する程度",
+    "csharp": "現在の主力スキルです",
+    "typescript": "JSは多く書いてきましたが、TSは基礎を理解している程度です",
+    "flutter": "小規模なプロジェクトでの開発経験のみ",
+    "japanese": "日本語",
+    "japaneseDesc": "N2は取得しましたが、会話はほとんど経験がありません..."
+  },
+  "portfolio": {
+    "web": "Web",
+    "android": "モバイル",
+    "windows": "デスクトップ",
+    "other": "その他",
+    "prepare": "準備中",
+    "selfText": "どれも小さなプロジェクトで、特筆するようなものではありませんが",
+    "link": "リンク",
+    "order_drink": "React製の簡単なドリンク注文ページ",
+    "gusty_little_world": "html+css+jsで作成した、初期の黒歴史です",
+    "anime_list": "Flutter製、新作アニメのリストが確認できるアプリ",
+    "cram_for_interview": "React Native製、簡単な面接問題集アプリ",
+    "pc_customizer": "Blazor Hybrid製、「原價屋」の商品をスクレイピングして、カスタムPCメニューを作成",
+    "gusty_dog": "Gemini APIを連携したLINEボット"
+  }
+}

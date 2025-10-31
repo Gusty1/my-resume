@@ -1,0 +1,44 @@
+[
+  {
+    "title": "訂飲料",
+    "description": "order_drink",
+    "link": "https://github.com/Gusty1/order-drink",
+    "image": "/images/portfolio/order-drink.png",
+    "type": "web"
+  },
+  {
+    "title": "GustyのLittle World",
+    "description": "gusty_little_world",
+    "link": "https://gusty1.github.io/GustyLittleWorld/",
+    "image": "/images/portfolio/gustyLittleWorld.png",
+    "type": "web"
+  },
+  {
+    "title": "Anime List",
+    "description": "anime_list",
+    "link": "https://github.com/Gusty1/anime_list",
+    "image": "/images/portfolio/animeList.png",
+    "type": "android"
+  },
+  {
+    "title": "面試抱佛腳",
+    "description": "cram_for_interview",
+    "link": "https://github.com/Gusty1/cram-for-interview",
+    "image": "/images/portfolio/cramForInterview.png",
+    "type": "android"
+  },
+  {
+    "title": "組電腦小幫手",
+    "description": "pc_customizer",
+    "link": "https://github.com/Gusty1/PCCustomizer",
+    "image": "/images/portfolio/PCCustomizer.png",
+    "type": "windows"
+  },
+  {
+    "title": "Grayの狗",
+    "description": "gusty_dog",
+    "link": "",
+    "image": "/images/portfolio/gustyDog.png",
+    "type": "other"
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "title": "Gray's Resume",
+    "description": "這是 Gray 的個人履歷網站"
+  },
+  "navbar": {
+    "skill": "技能",
+    "portfolio": "作品集",
+    "japanese": "日文",
+    "chinese": "中文",
+    "english": "英文",
+    "language": "語言",
+    "setting": "設定"
+  },
+  "home":{
+    "self1":"你好！我是 Gray Yuan，一位熱愛技術的開發者。（以前叫Gusty，當時就覺得這個名字很帥，但後來發現不好念也很怪= =）",
+    "self2":"我擁有四年的 WEB 全端開發經驗，同時也熱衷於探索 Android 和 Windows 應用開發，有做過幾個小專案。我平常的興趣是遊戲、動漫畫和電影，它們總能激發我一些新想法。假日我也會去跑跑步，畢竟加班是需要體力的。",
+    "self3":"如果您對我的技術或經歷感興趣，非常歡迎您與我聯繫，謝謝！",
+    "experience1":"大學畢業",
+    "experience2":"當兵",
+    "experience3":"當CAM作業員",
+    "experience4":"去資策會上課",
+    "experience5":"JAVA工程師",
+    "experience6":"去台中當JAVA工程師",
+    "experience7":"回家當C#工程師"
+  },
+  "skill":{
+    "react":"自學，然後工作上有用過",
+    "java":"以前靠這個吃飯的，但很久沒碰了",
+    "python":"寫小工具會用到一點而已",
+    "csharp":"現在是靠這個吃飯的",
+    "typescript":"JS寫很多，但TS只有了解而已",
+    "flutter":"有做過小專案而已",
+    "japanese":"日文",
+    "japaneseDesc":"雖然考過N2但完全沒說過幾句日文..."
+  },
+  "portfolio":{
+    "web":"網頁",
+    "android":"手機",
+    "windows":"電腦",
+    "other":"其他",
+    "prepare":"準備中",
+    "selfText":"都是一些小專案，沒有什麼特別了不起的東西",
+    "link":"連結",
+    "order_drink":"React做的，簡易的訂飲料網頁",
+    "gusty_little_world":"html+css+js寫的，早期的黑歷史",
+    "anime_list":"Flutter做的，可以看有哪些新番的清單",
+    "cram_for_interview":"React Native做的，面試的簡易題庫",
+    "pc_customizer":"Blazor hybrid做的，爬取原價屋的商品，任意組合菜單",
+    "gusty_dog":"接Gemini api的line機器人"
+  }
+}

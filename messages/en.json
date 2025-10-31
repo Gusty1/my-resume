@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "title": "Gray's Resume",
+    "description": "This is Gray's personal resume website"
+  },
+  "navbar": {
+    "skill": "Skills",
+    "portfolio": "Portfolio",
+    "japanese": "Japanese",
+    "chinese": "Chinese",
+    "english": "English",
+    "language": "Language",
+    "setting": "Settings"
+  },
+  "home": {
+    "self1": "Hello! I'm Gray Yuan, a developer who loves technology. (I used to go by Gusty, I thought it sounded cool back then, but later found it's hard to pronounce and a bit weird...)",
+    "self2": "I have four years of experience in WEB full-stack development, and I'm also passionate about exploring Android and Windows application development, having built a few small projects. My hobbies are games, anime/manga, and movies; they always inspire new ideas. I also go jogging on weekends... after all, you need stamina for overtime.",
+    "self3": "If you are interested in my skills or experience, please feel free to contact me. Thank you!",
+    "experience1": "Graduated from University",
+    "experience2": "Military Service",
+    "experience3": "Worked as a CAM Operator",
+    "experience4": "Attended a coding bootcamp",
+    "experience5": "Java Engineer",
+    "experience6": "Java Engineer in Taichung",
+    "experience7": "Returned home to work as a C# Engineer"
+  },
+  "skill": {
+    "react": "Self-taught, and have used it at work.",
+    "java": "Used this for a living, but haven't touched it in a long time.",
+    "python": "Just use it a bit for writing small tools.",
+    "csharp": "This is what I use for a living now.",
+    "typescript": "I write a lot of JS, but only have a basic understanding of TS.",
+    "flutter": "Only built small projects with it.",
+    "japanese": "Japanese",
+    "japaneseDesc": "Although I passed the N2, I've barely spoken any Japanese..."
+  },
+  "portfolio": {
+    "web": "Web",
+    "android": "Mobile",
+    "windows": "Desktop",
+    "other": "Other",
+    "prepare": "In Progress",
+    "selfText": "These are all small projects, nothing particularly amazing.",
+    "link": "Link",
+    "order_drink": "A simple drink ordering webpage made with React.",
+    "gusty_little_world": "Written with html+css+js, an embarrassing project from my early days.",
+    "anime_list": "Made with Flutter, a list to check for new anime.",
+    "cram_for_interview": "Made with React Native, a simple question bank for interviews.",
+    "pc_customizer": "Made with Blazor Hybrid, scrapes CoolPC products to build custom PC part lists.",
+    "gusty_dog": "A LINE Bot connected to the Gemini API."
+  }
+}

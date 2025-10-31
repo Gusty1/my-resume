@@ -1,27 +1,54 @@
 {
-  "name": "my-resume",
-  "version": "0.1.0",
+  "name": "mantine-next-template",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "analyze": "ANALYZE=true next build",
     "start": "next start",
-    "lint": "eslint"
+    "typecheck": "tsc --noEmit",
+    "lint": "npm run eslint && npm run stylelint",
+    "eslint": "eslint .",
+    "stylelint": "stylelint '**/*.css' --cache",
+    "prettier:check": "prettier --check \"**/*.{ts,tsx}\"",
+    "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
+    "test": "npm run prettier:check && npm run lint && npm run typecheck"
   },
   "dependencies": {
+    "@mantine/carousel": "^8.3.6",
+    "@mantine/core": "^8.3.6",
+    "@mantine/hooks": "^8.3.6",
+    "@next/bundle-analyzer": "^16.0.0",
+    "@tabler/icons-react": "^3.35.0",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.23.24",
+    "next": "16.0.0",
+    "next-intl": "^4.4.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "next": "16.0.0"
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "babel-plugin-react-compiler": "1.0.0",
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "16.0.0"
+    "@eslint/eslintrc": "^3",
+    "@eslint/js": "^9.37.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
+    "@types/eslint-plugin-jsx-a11y": "^6",
+    "@types/node": "^24.7.1",
+    "@types/react": "19.2.2",
+    "eslint": "^9.37.0",
+    "eslint-config-mantine": "^4.0.3",
+    "eslint-config-next": "16.0.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "postcss": "^8.5.6",
+    "postcss-preset-mantine": "1.18.0",
+    "postcss-simple-vars": "^7.0.1",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.46.0"
   }
 }
