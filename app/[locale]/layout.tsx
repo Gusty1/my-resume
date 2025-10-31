@@ -7,17 +7,16 @@ import '@mantine/core/styles.css';
 
 interface RootLayoutProps {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 interface MetadataProps {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 export async function generateMetadata({ params }: MetadataProps) {
   // 在函式內部 await params 來取得 locale
   const { locale } = await params; 
-
   const t = await getTranslations({ locale, namespace: 'meta' });
 
   return {
