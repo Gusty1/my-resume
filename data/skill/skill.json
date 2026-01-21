@@ -21,7 +21,7 @@
     "title":"C#",
     "icon":"TbBrandCSharp",
     "description":"csharp",
-    "level":3
+    "level":4
   },
   {
     "title":"TypeScript",
@@ -33,6 +33,6 @@
     "title":"Flutter",
     "icon":"FaFlutter",
     "description":"flutter",
-    "level":1
+    "level":3
   }
 ]

@@ -13,26 +13,26 @@
     "setting": "Settings"
   },
   "home": {
-    "self1": "Hello! I'm Gray Yuan, a developer who loves technology. I used to go by Gusty, I thought it sounded cool back then, but later found it's hard to pronounce and a bit weird...",
-    "self2": "I have four years of experience in WEB full-stack development, and I'm also passionate about exploring Android and Windows application development, having built a few small projects. My hobbies are games, anime/manga, and movies; they always inspire new ideas. I also go jogging on weekends... after all, you need stamina for overtime.",
-    "self3": "If you are interested in my skills or experience, please feel free to contact me. Thank you!",
-    "experience1": "Graduated from University",
-    "experience2": "Military Service",
-    "experience3": "Worked as a CAM Operator",
-    "experience4": "Attended a coding bootcamp",
+    "self1": "Hello! I'm Gray, a developer who is passionate about technology. I used to go by the name Gusty — I thought it sounded cool at the time, but later realized it was hard to pronounce and a bit awkward.",
+    "self2": "I have four years of experience in full-stack web development, and I am also interested in Android and Windows application development, having built several small projects. In my free time, I enjoy games, anime, and movies, which often inspire new ideas. I used to go running on weekends, but these days I feel lazier about going outside and further away from a healthy lifestyle...",
+    "self3": "If you are interested in my skills or experience, feel free to contact me. Thank you!",
+    "experience1": "Graduated from university",
+    "experience2": "Military service",
+    "experience3": "Worked as a CAM operator",
+    "experience4": "Attended training at III",
     "experience5": "Java Engineer",
-    "experience6": "Java Engineer in Taichung",
-    "experience7": "Returned home to work as a C# Engineer"
+    "experience6": "Worked as a Java Engineer in Taichung",
+    "experience7": "Returned home and became a C# Engineer"
   },
   "skill": {
-    "react": "Self-taught, and have used it at work.",
-    "java": "Used this for a living, but haven't touched it in a long time.",
-    "python": "Just use it a bit for writing small tools.",
-    "csharp": "This is what I use for a living now.",
-    "typescript": "I write a lot of JS, but only have a basic understanding of TS.",
-    "flutter": "Only built small projects with it.",
+    "react": "Self-studied for a while and have used it a bit at work",
+    "java": "Used to make a living with it, but haven't touched it for a long time",
+    "python": "Only used occasionally for small utility scripts",
+    "csharp": "My recent job mainly uses this, and it is currently my primary language",
+    "typescript": "I write a lot of JavaScript, but only have basic knowledge of TypeScript with little hands-on experience",
+    "flutter": "I believe mobile development has a future, so I self-studied it for a while and recently had the chance to use it at work",
     "japanese": "Japanese",
-    "japaneseDesc": "Although I passed the N2, I've barely spoken any Japanese..."
+    "japaneseDesc": "I passed the JLPT N2, but have barely spoken Japanese in real situations"
   },
   "portfolio": {
     "web": "Web",
@@ -40,13 +40,12 @@
     "windows": "Desktop",
     "other": "Other",
     "prepare": "In Progress",
-    "selfText": "These are all small projects, nothing particularly amazing.",
     "link": "Link",
-    "order_drink": "A simple drink ordering webpage made with React.",
-    "gusty_little_world": "Written with html+css+js, an embarrassing project from my early days.",
-    "anime_list": "Made with Flutter, a list to check for new anime.",
-    "cram_for_interview": "Made with React Native, a simple question bank for interviews.",
-    "pc_customizer": "Made with Blazor Hybrid, scrapes CoolPC products to build custom PC part lists.",
-    "gusty_dog": "A LINE Bot connected to the Gemini API."
+    "order_drink": "Built with React, a simple drink ordering web app",
+    "gusty_little_world": "Built with HTML, CSS, and JavaScript — an early black history",
+    "anime_list": "Built with Flutter, an app to view seasonal anime lists",
+    "cram_for_interview": "Built with React Native, a simple interview question app",
+    "pc_customizer": "Built with Blazor Hybrid, crawls products from CoolPC and allows custom PC configurations",
+    "gusty_dog": "A LINE bot integrated with the Gemini API"
   }
 }

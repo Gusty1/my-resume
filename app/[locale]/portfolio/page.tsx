@@ -11,7 +11,6 @@ import {
   AspectRatio,
   Button,
   Card,
-  Center,
   Group,
   Image,
   SimpleGrid,
@@ -85,12 +84,6 @@ export default function PortfolioPage() {
 
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible">
-      <Center mt="sm">
-        <Text size="md" c="dimmed">
-          {t('selfText')}
-        </Text>
-      </Center>
-
       <Tabs defaultValue="web">
         <Tabs.List grow>
           <Tabs.Tab value="web" leftSection={<MdOutlineWebAsset size={defaultIconSize} />}>
