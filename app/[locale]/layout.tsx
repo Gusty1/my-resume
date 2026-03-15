@@ -25,9 +25,13 @@ export async function generateMetadata({ params }: MetadataProps) {
   };
 }
 
-//設定主題顏色
+// 全域主題設定：統一圓角、主色調
 const theme = createTheme({
   primaryColor: 'cyan',
+  defaultRadius: 'md',
+  headings: {
+    fontWeight: '600',
+  },
 });
 
 export default async function RootLayout({ children, params }: RootLayoutProps) {

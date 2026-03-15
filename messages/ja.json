@@ -22,7 +22,8 @@
     "experience4": "資策会での研修",
     "experience5": "Javaエンジニア",
     "experience6": "台中でJavaエンジニアとして勤務",
-    "experience7": "帰郷してC#エンジニアに"
+    "experience7": "帰郷してC#エンジニアに",
+    "experienceTitle": "経歴"
   },
   "skill": {
     "react": "独学で学び、業務でも一部使用しています",

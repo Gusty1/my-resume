@@ -1,6 +1,6 @@
 'use client';
 
-import { Link, usePathname, useRouter } from '../../i18n/routing';
+import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
 import { AiFillProfile } from 'react-icons/ai';
 import { FaMoon } from 'react-icons/fa';
@@ -13,7 +13,7 @@ interface NavBtnGroupProps {
   onLinkClick?: () => void;
 }
 
-export default function NavBtnGroup({ onLinkClick }: NavBtnGroupProps) {
+export default function NavBtnGroup({ onLinkClick }: Readonly<NavBtnGroupProps>) {
   const t = useTranslations('navbar');
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';

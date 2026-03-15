@@ -5,14 +5,14 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { Anchor, AppShell, Burger, Container, Flex, Group, Image, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import NavBtnGroup from '../../components/Home/NavBtnGroup';
+import NavBtnGroup from '@/components/Home/NavBtnGroup';
 
 // 3. 定義 props，需要接收 children
 interface ShellProps {
   children: ReactNode;
 }
 
-export default function MobileNavbar({ children }: ShellProps) {
+export default function MobileNavbar({ children }: Readonly<ShellProps>) {
   const [opened, { toggle, close }] = useDisclosure();
   const locale = useLocale();
 
@@ -36,9 +36,9 @@ export default function MobileNavbar({ children }: ShellProps) {
               underline="never"
               onClick={close}
             >
-              <Flex>
+              <Flex align="center" gap="xs">
                 <Image radius="md" w="32px" h="32px" src="/images/portfolio/gustyLittleWorld.png" />
-                <Text size='lg' fw={500}>Gray</Text>
+                <Text size="lg" fw={600}>Gray</Text>
               </Flex>
             </Anchor>
             <Group ml="lg" gap={10} visibleFrom="sm" mr="md">

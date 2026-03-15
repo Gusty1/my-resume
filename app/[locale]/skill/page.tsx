@@ -8,9 +8,9 @@ import { FaFlutter } from 'react-icons/fa6';
 import { LuBadgeJapaneseYen } from 'react-icons/lu';
 import { SiTypescript } from 'react-icons/si';
 import { TbBrandCSharp } from 'react-icons/tb';
-import { Divider, Flex, Grid, Rating, Stack, Text } from '@mantine/core';
-import { containerVariants } from '../../../common/animeSetting';
-import skillJson from '../../../data/skill/skill.json';
+import { Flex, Grid, Paper, Rating, Stack, Text } from '@mantine/core';
+import { containerVariants } from '@/common/animeSetting';
+import skillJson from '@/data/skill/skill.json';
 
 // 顏色清單，最多支援 12 種顏色，超過要另外想辦法
 const mantineColorVars = [
@@ -28,23 +28,20 @@ const mantineColorVars = [
   'var(--mantine-color-orange-6)',
 ];
 
-// 建立「穩定 Hash」函式它會接收一個字串 (例如 "FaReact")， 並「永遠」回傳同一個顏色
+// 建立「穩定 Hash」函式，接收字串並永遠回傳同一個顏色
 const getStableColor = (str: string): string => {
   let hash = 0;
-  // 簡單的 hash 算法
   for (let i = 0; i < str.length; i++) {
-    const char = str.charCodeAt(i);
+    const char = str.codePointAt(i) ?? 0;
     hash = (hash << 5) - hash + char;
-    hash &= hash; // 轉換成 32bit 整數
+    hash &= hash;
   }
-  // 確保 hash 是正數，並用它來選取顏色
   const index = Math.abs(hash) % mantineColorVars.length;
   return mantineColorVars[index];
 };
 
 const defaultIconSize = 28;
 
-//設定對應的icon map
 const iconMap = {
   FaReact: <FaReact size={defaultIconSize} color={getStableColor('FaReact')} />,
   FaJava: <FaJava size={defaultIconSize} color={getStableColor('FaJava')} />,
@@ -54,7 +51,6 @@ const iconMap = {
   FaFlutter: <FaFlutter size={defaultIconSize} color={getStableColor('FaFlutter')} />,
 };
 
-//以防有icon沒對應到
 const DefaultIcon = <FaQuestionCircle size={defaultIconSize} color="var(--mantine-color-gray-6)" />;
 
 export default function SkillPage() {
@@ -62,12 +58,12 @@ export default function SkillPage() {
 
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible">
-      <Stack>
+      <Stack gap="sm">
         {skillJson.map((item, index) => {
           const IconComponent = iconMap[item.icon as keyof typeof iconMap] || DefaultIcon;
 
           return (
-            <React.Fragment key={`${item.title}-${index}`}>
+            <Paper key={`${item.title}-${index}`} p="md" radius="md" withBorder>
               <Grid align="center" gutter="sm">
                 <Grid.Col span={{ base: 12, sm: 4 }}>
                   <Flex align="center" gap="sm">
@@ -81,30 +77,36 @@ export default function SkillPage() {
                   <Rating defaultValue={item.level} readOnly size="lg" />
                 </Grid.Col>
                 <Grid.Col span={{ base: 12, sm: 4 }}>
-                  <Text c="dimmed">{t(item.description) || '...'}</Text>
+                  <Text c="dimmed" size="sm">
+                    {t(item.description) || '...'}
+                  </Text>
                 </Grid.Col>
               </Grid>
-              <Divider />
-            </React.Fragment>
+            </Paper>
           );
         })}
 
-        <Grid align="center">
-          <Grid.Col span={{ base: 12, sm: 4 }}>
-            <Flex align="center" gap="sm">
-              <LuBadgeJapaneseYen size={defaultIconSize} />
-              <Text fw={500} size="lg">
-                {t('japanese')}
+        {/* 日文技能 - 獨立卡片 */}
+        <Paper p="md" radius="md" withBorder>
+          <Grid align="center" gutter="sm">
+            <Grid.Col span={{ base: 12, sm: 4 }}>
+              <Flex align="center" gap="sm">
+                <LuBadgeJapaneseYen size={defaultIconSize} />
+                <Text fw={500} size="lg">
+                  {t('japanese')}
+                </Text>
+              </Flex>
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, sm: 4 }}>
+              <Rating defaultValue={2} readOnly size="lg" />
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, sm: 4 }}>
+              <Text c="dimmed" size="sm">
+                {t('japaneseDesc')}
               </Text>
-            </Flex>
-          </Grid.Col>
-          <Grid.Col span={{ base: 12, sm: 4 }}>
-            <Rating defaultValue={2} readOnly size="lg" />
-          </Grid.Col>
-          <Grid.Col span={{ base: 12, sm: 4 }}>
-            <Text c="dimmed">{t('japaneseDesc')}</Text>
-          </Grid.Col>
-        </Grid>
+            </Grid.Col>
+          </Grid>
+        </Paper>
       </Stack>
     </motion.div>
   );

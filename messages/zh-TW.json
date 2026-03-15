@@ -22,7 +22,8 @@
     "experience4":"去資策會上課",
     "experience5":"JAVA工程師",
     "experience6":"去台中當JAVA工程師",
-    "experience7":"回家當C#工程師"
+    "experience7":"回家當C#工程師",
+    "experienceTitle":"經歷"
   },
   "skill":{
     "react":"自學一段時間了，工作上有多少用到一點",

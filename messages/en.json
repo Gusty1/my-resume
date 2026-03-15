@@ -22,7 +22,8 @@
     "experience4": "Attended training at III",
     "experience5": "Java Engineer",
     "experience6": "Worked as a Java Engineer in Taichung",
-    "experience7": "Returned home and became a C# Engineer"
+    "experience7": "Returned home and became a C# Engineer",
+    "experienceTitle": "Experience"
   },
   "skill": {
     "react": "Self-studied for a while and have used it a bit at work",
