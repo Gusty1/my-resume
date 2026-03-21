@@ -6,6 +6,7 @@ import { useLocale } from 'next-intl';
 import { Anchor, AppShell, Burger, Container, Flex, Group, Image, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import NavBtnGroup from '@/components/Home/NavBtnGroup';
+import SakanaWidgetClient from '@/components/SakanaWidgetClient';
 
 // 3. 定義 props，需要接收 children
 interface ShellProps {
@@ -30,15 +31,12 @@ export default function MobileNavbar({ children }: Readonly<ShellProps>) {
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Group justify="space-between" style={{ flex: 1 }}>
-            <Anchor
-              component={Link}
-              href={`/${locale}/`}
-              underline="never"
-              onClick={close}
-            >
+            <Anchor component={Link} href={`/${locale}/`} underline="never" onClick={close}>
               <Flex align="center" gap="xs">
                 <Image radius="md" w="32px" h="32px" src="/images/portfolio/gustyLittleWorld.png" />
-                <Text size="lg" fw={600}>Gray</Text>
+                <Text size="lg" fw={600}>
+                  Gray
+                </Text>
               </Flex>
             </Anchor>
             <Group ml="lg" gap={10} visibleFrom="sm" mr="md">
@@ -57,6 +55,7 @@ export default function MobileNavbar({ children }: Readonly<ShellProps>) {
           {children}
         </Container>
       </AppShell.Main>
+      <SakanaWidgetClient />
     </AppShell>
   );
 }
