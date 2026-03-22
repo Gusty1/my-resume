@@ -10,7 +10,11 @@
     "chinese": "Chinese",
     "english": "English",
     "language": "Language",
-    "setting": "Settings"
+    "setting": "Settings",
+    "menuOpen": "Open navigation menu",
+    "menuClose": "Close navigation menu",
+    "lightMode": "Switch to light mode",
+    "darkMode": "Switch to dark mode"
   },
   "home": {
     "self1": "Hello! I'm Gray, a developer who is passionate about technology. I used to go by the name Gusty — I thought it sounded cool at the time, but later realized it was hard to pronounce and a bit awkward.",
@@ -35,6 +39,11 @@
     "japanese": "Japanese",
     "japaneseDesc": "I passed the JLPT N2, but have barely spoken Japanese in real situations"
   },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for does not exist. It may have been removed or the URL was entered incorrectly.",
+    "backHome": "Back to Home"
+  },
   "portfolio": {
     "web": "Web",
     "android": "Mobile",
@@ -43,10 +52,16 @@
     "prepare": "In Progress",
     "link": "Link",
     "order_drink": "Built with React, a simple drink ordering web app",
+    "order_drink_alt": "Screenshot of the drink ordering web app built with React",
     "gusty_little_world": "Built with HTML, CSS, and JavaScript — an early black history",
+    "gusty_little_world_alt": "Screenshot of GustyのLittle World personal website built with HTML, CSS, and JavaScript",
     "anime_list": "Built with Flutter, an app to view seasonal anime lists",
+    "anime_list_alt": "Screenshot of the Anime List mobile app built with Flutter for browsing seasonal anime",
     "cram_for_interview": "Built with React Native, a simple interview question app",
+    "cram_for_interview_alt": "Screenshot of the Cram for Interview mobile app built with React Native",
     "pc_customizer": "Built with Blazor Hybrid, crawls products from CoolPC and allows custom PC configurations",
-    "gusty_dog": "A LINE bot integrated with the Gemini API"
+    "pc_customizer_alt": "Screenshot of the PC Customizer desktop app built with Blazor Hybrid for configuring PC builds",
+    "gusty_dog": "A LINE bot integrated with the Gemini API",
+    "gusty_dog_alt": "Screenshot of Gray's Dog LINE bot integrated with the Gemini API"
   }
 }

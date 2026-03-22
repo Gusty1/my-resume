@@ -16,12 +16,20 @@ interface MetadataProps {
 
 export async function generateMetadata({ params }: MetadataProps) {
   // 在函式內部 await params 來取得 locale
-  const { locale } = await params; 
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
 
   return {
     title: t('title') || 'Gray Resume',
     description: t('description') || 'Personal resume website.',
+    openGraph: {
+      title: t('title') || 'Gray Resume',
+      description: t('description') || 'Personal resume website.',
+      type: 'website',
+      locale: locale,
+      url: `https://my-resume-tau-amber.vercel.app/${locale}`,
+      siteName: "Gray's Resume",
+    },
   };
 }
 

@@ -1,7 +1,8 @@
 'use client';
 
+import NextImage from 'next/image';
 import { Carousel } from '@mantine/carousel';
-import { Box, Image } from '@mantine/core';
+import { Box } from '@mantine/core';
 
 import '@mantine/carousel/styles.css';
 
@@ -13,6 +14,7 @@ export default function MyCarousel() {
     <Carousel
       mt="sm"
       slideSize="42%"
+      slideGap="md"
       emblaOptions={{
         loop: true,
         dragFree: false,
@@ -22,8 +24,15 @@ export default function MyCarousel() {
       {imageJson.map((item) => {
         return (
           <Carousel.Slide key={item.src}>
+            {/* 使用 Next.js Image：自動 WebP 轉換、lazy load、尺寸最佳化 */}
             <Box className={classes.imageBox}>
-              <Image h={280} w="auto" fit="contain" radius="md" src={item.src} alt={item.alt} />
+              <NextImage
+                src={item.src}
+                alt={item.alt}
+                fill
+                sizes="(max-width: 640px) 90vw, 42vw"
+                style={{ objectFit: 'contain' }}
+              />
             </Box>
           </Carousel.Slide>
         );

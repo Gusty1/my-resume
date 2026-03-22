@@ -1,0 +1,13 @@
+.container {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 200px;
+  height: 220px;
+  z-index: 999;
+
+  /* 在行動裝置（< 768px）隱藏，避免遮擋操作區域 */
+  @media (max-width: 48em) {
+    display: none;
+  }
+}

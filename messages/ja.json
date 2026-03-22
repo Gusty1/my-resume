@@ -10,7 +10,11 @@
     "chinese": "中国語",
     "english": "英語",
     "language": "言語",
-    "setting": "設定"
+    "setting": "設定",
+    "menuOpen": "ナビゲーションメニューを開く",
+    "menuClose": "ナビゲーションメニューを閉じる",
+    "lightMode": "ライトモードに切り替え",
+    "darkMode": "ダークモードに切り替え"
   },
   "home": {
     "self1": "こんにちは！私はGrayと申します。技術が大好きな開発者です。以前はGustyという名前を使っていましたが、当時は格好いいと思っていたものの、後になって発音しづらく少し変だと感じました。",
@@ -35,6 +39,11 @@
     "japanese": "日本語",
     "japaneseDesc": "JLPT N2に合格しましたが、実際に日本語を話す機会はほとんどありません"
   },
+  "notFound": {
+    "title": "ページが見つかりません",
+    "description": "お探しのページは存在しません。削除されたか、URLが間違っている可能性があります。",
+    "backHome": "ホームへ戻る"
+  },
   "portfolio": {
     "web": "Web",
     "android": "モバイル",
@@ -43,10 +52,16 @@
     "prepare": "準備中",
     "link": "リンク",
     "order_drink": "Reactで作成したシンプルなドリンク注文Webアプリ",
+    "order_drink_alt": "Reactで作成したドリンク注文Webアプリのスクリーンショット",
     "gusty_little_world": "HTML・CSS・JavaScriptで作成した初期の黒歴史作品",
+    "gusty_little_world_alt": "HTML・CSS・JavaScriptで作成したGustyのLittle World個人サイトのスクリーンショット",
     "anime_list": "Flutterで作成した新番アニメ一覧アプリ",
+    "anime_list_alt": "Flutterで作成した季節アニメ一覧アプリ「Anime List」のスクリーンショット",
     "cram_for_interview": "React Nativeで作成した面接対策用の簡易問題集アプリ",
+    "cram_for_interview_alt": "React Nativeで作成した面接対策アプリ「面試抱佛腳」のスクリーンショット",
     "pc_customizer": "Blazor Hybridで作成。原価屋の商品をクロールし、自由に構成できるPCカスタマイザー",
-    "gusty_dog": "Gemini APIを連携したLINEボット"
+    "pc_customizer_alt": "Blazor Hybridで作成したPCカスタマイザーデスクトップアプリのスクリーンショット",
+    "gusty_dog": "Gemini APIを連携したLINEボット",
+    "gusty_dog_alt": "Gemini APIを連携したLINEボット「Grayの狗」のスクリーンショット"
   }
 }

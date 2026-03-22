@@ -1,9 +1,9 @@
 import { NextConfig } from 'next';
-import createNextIntlPlugin from 'next-intl/plugin';
 import bundleAnalyzer from '@next/bundle-analyzer';
+import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
-  reactStrictMode: false,
+  reactStrictMode: true,
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
   },

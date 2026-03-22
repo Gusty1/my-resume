@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
 import { IoMdMail } from 'react-icons/io';
@@ -16,7 +15,7 @@ import {
   Title,
   Tooltip,
 } from '@mantine/core';
-import { containerVariants } from '@/common/animeSetting';
+import AnimatedWrapper from '@/components/AnimatedWrapper';
 import MyCarousel from '@/components/Home/MyCarousel';
 import experienceJSon from '@/data/home/experience.json';
 
@@ -24,7 +23,7 @@ export default function HomePage() {
   const t = useTranslations('home');
 
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible">
+    <AnimatedWrapper>
       <Stack gap="xl">
         {/* 自我介紹區塊 */}
         <Grid gutter="xl">
@@ -82,7 +81,7 @@ export default function HomePage() {
               <Text fw={500} size="sm" c="dimmed" mb="sm">
                 {t('experienceTitle')}
               </Text>
-              <ScrollArea h={240} type="auto">
+              <ScrollArea h={240} type="hover">
                 <Timeline active={0} bulletSize={24} lineWidth={2}>
                   {experienceJSon.map((item, index) => (
                     <Timeline.Item title={t(item.title)} key={`${item.title}-${index}`}>
@@ -100,6 +99,6 @@ export default function HomePage() {
         {/* 照片輪播 */}
         <MyCarousel />
       </Stack>
-    </motion.div>
+    </AnimatedWrapper>
   );
 }

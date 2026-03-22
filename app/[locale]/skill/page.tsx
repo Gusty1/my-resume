@@ -1,7 +1,5 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { FaJava, FaPython, FaQuestionCircle, FaReact } from 'react-icons/fa';
 import { FaFlutter } from 'react-icons/fa6';
@@ -9,7 +7,7 @@ import { LuBadgeJapaneseYen } from 'react-icons/lu';
 import { SiTypescript } from 'react-icons/si';
 import { TbBrandCSharp } from 'react-icons/tb';
 import { Flex, Grid, Paper, Rating, Stack, Text } from '@mantine/core';
-import { containerVariants } from '@/common/animeSetting';
+import AnimatedWrapper from '@/components/AnimatedWrapper';
 import skillJson from '@/data/skill/skill.json';
 
 // 顏色清單，最多支援 12 種顏色，超過要另外想辦法
@@ -34,7 +32,7 @@ const getStableColor = (str: string): string => {
   for (let i = 0; i < str.length; i++) {
     const char = str.codePointAt(i) ?? 0;
     hash = (hash << 5) - hash + char;
-    hash &= hash;
+    hash |= 0; // 截斷為 32 位元整數，防止浮點數溢位
   }
   const index = Math.abs(hash) % mantineColorVars.length;
   return mantineColorVars[index];
@@ -57,7 +55,7 @@ export default function SkillPage() {
   const t = useTranslations('skill');
 
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible">
+    <AnimatedWrapper>
       <Stack gap="sm">
         {skillJson.map((item, index) => {
           const IconComponent = iconMap[item.icon as keyof typeof iconMap] || DefaultIcon;
@@ -78,7 +76,7 @@ export default function SkillPage() {
                 </Grid.Col>
                 <Grid.Col span={{ base: 12, sm: 4 }}>
                   <Text c="dimmed" size="sm">
-                    {t(item.description) || '...'}
+                    {t(item.description as Parameters<typeof t>[0]) || '...'}
                   </Text>
                 </Grid.Col>
               </Grid>
@@ -108,6 +106,6 @@ export default function SkillPage() {
           </Grid>
         </Paper>
       </Stack>
-    </motion.div>
+    </AnimatedWrapper>
   );
 }

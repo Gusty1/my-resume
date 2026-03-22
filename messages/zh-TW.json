@@ -10,7 +10,11 @@
     "chinese": "中文",
     "english": "英文",
     "language": "語言",
-    "setting": "設定"
+    "setting": "設定",
+    "menuOpen": "開啟導覽選單",
+    "menuClose": "關閉導覽選單",
+    "lightMode": "切換為淺色模式",
+    "darkMode": "切換為深色模式"
   },
   "home":{
     "self1":"你好！我是 Gray，一位熱愛技術的開發者。以前叫Gusty，當時就覺得這個名字很帥，但後來發現不好念也很怪= =",
@@ -35,6 +39,11 @@
     "japanese":"日文",
     "japaneseDesc":"雖然考過N2但完全沒說過幾句日文..."
   },
+  "notFound": {
+    "title": "找不到頁面",
+    "description": "您要找的頁面不存在，可能已被移除或網址輸入錯誤。",
+    "backHome": "返回首頁"
+  },
   "portfolio":{
     "web":"網頁",
     "android":"手機",
@@ -43,10 +52,16 @@
     "prepare":"準備中",
     "link":"連結",
     "order_drink":"React做的，簡易的訂飲料網頁",
+    "order_drink_alt":"訂飲料網頁應用程式的截圖，使用 React 開發",
     "gusty_little_world":"html+css+js寫的，早期的黑歷史",
+    "gusty_little_world_alt":"GustyのLittle World 個人網站截圖，使用 HTML、CSS、JavaScript 開發",
     "anime_list":"Flutter做的，可以看有哪些新番的清單",
+    "anime_list_alt":"Anime List 手機應用程式截圖，使用 Flutter 開發，可瀏覽當季新番",
     "cram_for_interview":"React Native做的，面試的簡易題庫",
+    "cram_for_interview_alt":"面試抱佛腳手機應用程式截圖，使用 React Native 開發的面試題庫",
     "pc_customizer":"Blazor hybrid做的，爬取原價屋的商品，任意組合菜單",
-    "gusty_dog":"接Gemini api的line機器人"
+    "pc_customizer_alt":"組電腦小幫手桌面應用程式截圖，使用 Blazor Hybrid 開發，可自訂電腦配置",
+    "gusty_dog":"接Gemini api的line機器人",
+    "gusty_dog_alt":"Grayの狗 LINE 機器人截圖，串接 Gemini API"
   }
 }

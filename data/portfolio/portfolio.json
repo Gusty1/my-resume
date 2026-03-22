@@ -2,6 +2,7 @@
   {
     "title": "訂飲料",
     "description": "order_drink",
+    "altText": "order_drink_alt",
     "link": "https://github.com/Gusty1/order-drink",
     "image": "/images/portfolio/order-drink.png",
     "type": "web"
@@ -9,6 +10,7 @@
   {
     "title": "GustyのLittle World",
     "description": "gusty_little_world",
+    "altText": "gusty_little_world_alt",
     "link": "https://gusty1.github.io/GustyLittleWorld/",
     "image": "/images/portfolio/gustyLittleWorld.png",
     "type": "web"
@@ -16,13 +18,15 @@
   {
     "title": "Anime List",
     "description": "anime_list",
+    "altText": "anime_list_alt",
     "link": "https://github.com/Gusty1/anime_list",
-    "image": "/images/portfolio/animeList.png",
+    "image": "/images/portfolio/animeList.webp",
     "type": "android"
   },
   {
     "title": "面試抱佛腳",
     "description": "cram_for_interview",
+    "altText": "cram_for_interview_alt",
     "link": "https://github.com/Gusty1/cram-for-interview",
     "image": "/images/portfolio/cramForInterview.png",
     "type": "android"
@@ -30,6 +34,7 @@
   {
     "title": "組電腦小幫手",
     "description": "pc_customizer",
+    "altText": "pc_customizer_alt",
     "link": "https://github.com/Gusty1/PCCustomizer",
     "image": "/images/portfolio/PCCustomizer.png",
     "type": "windows"
@@ -37,6 +42,7 @@
   {
     "title": "Grayの狗",
     "description": "gusty_dog",
+    "altText": "gusty_dog_alt",
     "link": "",
     "image": "/images/portfolio/gustyDog.png",
     "type": "other"

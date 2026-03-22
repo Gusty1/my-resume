@@ -5,19 +5,22 @@ import SakanaWidget from 'sakana-widget';
 
 import 'sakana-widget/lib/index.css';
 
+import classes from './SakanaWidgetClient.module.css';
+
 /**
- * Sakana Widget 的 React 包裝元件，
- * 透過 useEffect 在客戶端掛載 DOM widget，
- * 並在元件卸載時自動清理。
+ * Sakana Widget 的 React 包裝元件。
+ * container div 由 useEffect 手動建立並直接附加到 document.body，
+ * 完全脫離 React 的渲染樹，避免語言切換時 re-render 造成的
+ * DOM removeChild 時序衝突。
  */
 export default function SakanaWidgetClient() {
-  const containerRef = useRef<HTMLDivElement>(null);
   const widgetRef = useRef<SakanaWidget | null>(null);
 
   useEffect(() => {
-    if (!containerRef.current || widgetRef.current) {
-      return;
-    }
+    // 手動建立 container 並附加到 body，不透過 React 渲染
+    const container = document.createElement('div');
+    container.className = classes.container;
+    document.body.appendChild(container);
 
     // 修改所有內建角色的 initialState，讓切換角色後也維持慢速永續
     const slowState = { i: 0.001, d: 1 };
@@ -40,26 +43,19 @@ export default function SakanaWidgetClient() {
     }
 
     const widget = new SakanaWidget({ character: 'musashi', autoFit: true });
-    widget.mount(containerRef.current);
+    widget.mount(container);
     widgetRef.current = widget;
 
     return () => {
       widget.unmount();
       widgetRef.current = null;
+      // 安全移除 container，確認還在 body 內才移除
+      if (document.body.contains(container)) {
+        document.body.removeChild(container);
+      }
     };
   }, []);
 
-  return (
-    <div
-      ref={containerRef}
-      style={{
-        position: 'fixed',
-        right: 16,
-        bottom: 16,
-        width: 200,
-        height: 220,
-        zIndex: 999,
-      }}
-    />
-  );
+  // 不渲染任何 React DOM，container 由 useEffect 自行管理
+  return null;
 }

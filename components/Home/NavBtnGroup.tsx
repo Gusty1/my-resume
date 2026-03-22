@@ -1,28 +1,30 @@
 'use client';
 
-import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
 import { AiFillProfile } from 'react-icons/ai';
 import { FaMoon } from 'react-icons/fa';
 import { MdOutlineWbSunny } from 'react-icons/md';
 import { SiDictionarydotcom } from 'react-icons/si';
-import { Button, Menu, Switch, useMantineColorScheme } from '@mantine/core';
+import { Button, Menu, useMantineColorScheme } from '@mantine/core';
+import { Link, usePathname, useRouter } from '@/i18n/routing';
 import classes from './NavBtnGroup.module.css';
 
 interface NavBtnGroupProps {
   onLinkClick?: () => void;
+  /** 行動版側邊導覽列模式：按鈕靠左對齊、撐滿寬度、顯示深色模式切換 */
+  mobile?: boolean;
 }
 
-export default function NavBtnGroup({ onLinkClick }: Readonly<NavBtnGroupProps>) {
+export default function NavBtnGroup({
+  onLinkClick,
+  mobile = false,
+}: Readonly<NavBtnGroupProps>) {
   const t = useTranslations('navbar');
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';
 
-  // 取得當前語言 (例如: 'en', 'ja', 'zh-TW')
   const locale = useLocale();
-
   const router = useRouter();
-  // pathname 會自動回傳「不包含」 locale 的路徑 (例如: '/skill')
   const pathname = usePathname();
 
   const handleLanguageChange = (nextLocale: string) => {
@@ -39,8 +41,9 @@ export default function NavBtnGroup({ onLinkClick }: Readonly<NavBtnGroupProps>)
         leftSection={<AiFillProfile />}
         onClick={onLinkClick}
         justify="flex-start"
+        fullWidth={mobile}
       >
-        {t('skill') /*技能*/}
+        {t('skill')}
       </Button>
       <Button
         className={classes.control}
@@ -50,63 +53,75 @@ export default function NavBtnGroup({ onLinkClick }: Readonly<NavBtnGroupProps>)
         leftSection={<SiDictionarydotcom />}
         onClick={onLinkClick}
         justify="flex-start"
+        fullWidth={mobile}
       >
         {t('portfolio')}
       </Button>
+
+      {/* 行動版：深色模式切換，樣式與其他按鈕一致 */}
+      {mobile && (
+        <Button
+          className={classes.control}
+          variant="transparent"
+          justify="flex-start"
+          fullWidth
+          leftSection={
+            isDark ? (
+              <MdOutlineWbSunny size={18} color="var(--mantine-color-blue-6)" />
+            ) : (
+              <FaMoon size={16} color="var(--mantine-color-yellow-4)" />
+            )
+          }
+          onClick={() => {
+            toggleColorScheme();
+            onLinkClick?.();
+          }}
+          aria-label={isDark ? t('lightMode') : t('darkMode')}
+        >
+          {isDark ? t('lightMode') : t('darkMode')}
+        </Button>
+      )}
+
+      {/* 語言切換 */}
       <Menu trigger="click-hover" openDelay={100} closeDelay={400}>
         <Menu.Target>
-          <Button variant="default" justify="flex-start">
-            {t('setting')}
+          <Button
+            className={classes.control}
+            variant="default"
+            justify="flex-start"
+            fullWidth={mobile}
+          >
+            {locale.toUpperCase()}
           </Button>
         </Menu.Target>
         <Menu.Dropdown>
-          <Menu.Item>
-            <Switch
-              checked={isDark}
-              onChange={() => {
-                toggleColorScheme();
-                onLinkClick?.();
-              }}
-              size="md"
-              color="dark.4"
-              onLabel={<FaMoon size={16} color="var(--mantine-color-yellow-4)" />}
-              offLabel={<MdOutlineWbSunny size={16} color="var(--mantine-color-blue-6)" />}
-            />
+          <Menu.Item
+            color={locale === 'zh-TW' ? 'blue' : undefined}
+            onClick={() => {
+              handleLanguageChange('zh-TW');
+              onLinkClick?.();
+            }}
+          >
+            {t('chinese')}
           </Menu.Item>
-          <Menu.Sub>
-            <Menu.Sub.Target>
-              <Menu.Sub.Item>{t('language') /*語言*/}</Menu.Sub.Item>
-            </Menu.Sub.Target>
-            <Menu.Sub.Dropdown>
-              <Menu.Item
-                color={locale === 'zh-TW' ? 'blue' : undefined}
-                onClick={() => {
-                  handleLanguageChange('zh-TW');
-                  onLinkClick?.();
-                }}
-              >
-                {t('chinese') /*中文*/}
-              </Menu.Item>
-              <Menu.Item
-                color={locale === 'en' ? 'blue' : undefined}
-                onClick={() => {
-                  handleLanguageChange('en');
-                  onLinkClick?.();
-                }}
-              >
-                {t('english') /*英文*/}
-              </Menu.Item>
-              <Menu.Item
-                color={locale === 'ja' ? 'blue' : undefined}
-                onClick={() => {
-                  handleLanguageChange('ja');
-                  onLinkClick?.();
-                }}
-              >
-                {t('japanese') /*日文*/}
-              </Menu.Item>
-            </Menu.Sub.Dropdown>
-          </Menu.Sub>
+          <Menu.Item
+            color={locale === 'en' ? 'blue' : undefined}
+            onClick={() => {
+              handleLanguageChange('en');
+              onLinkClick?.();
+            }}
+          >
+            {t('english')}
+          </Menu.Item>
+          <Menu.Item
+            color={locale === 'ja' ? 'blue' : undefined}
+            onClick={() => {
+              handleLanguageChange('ja');
+              onLinkClick?.();
+            }}
+          >
+            {t('japanese')}
+          </Menu.Item>
         </Menu.Dropdown>
       </Menu>
     </>
