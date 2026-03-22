@@ -15,10 +15,7 @@ interface NavBtnGroupProps {
   mobile?: boolean;
 }
 
-export default function NavBtnGroup({
-  onLinkClick,
-  mobile = false,
-}: Readonly<NavBtnGroupProps>) {
+export default function NavBtnGroup({ onLinkClick, mobile = false }: Readonly<NavBtnGroupProps>) {
   const t = useTranslations('navbar');
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';
