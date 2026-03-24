@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { containerVariants } from '@/common/animeSetting';
+import { containerVariants } from '@/constants/animeSetting';
 
 interface AnimatedWrapperProps {
   children: ReactNode;

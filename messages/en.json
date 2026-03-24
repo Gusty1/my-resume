@@ -17,6 +17,9 @@
     "darkMode": "Switch to dark mode"
   },
   "home": {
+    "home_image_1_alt": "Fly towards your dreams",
+    "home_image_2_alt": "Trying to do better",
+    "home_image_3_alt": "Gintama",
     "self1": "Hello! I'm Gray, a developer who is passionate about technology. I used to go by the name Gusty — I thought it sounded cool at the time, but later realized it was hard to pronounce and a bit awkward.",
     "self2": "I have four years of experience in full-stack web development, and I am also interested in Android and Windows application development, having built several small projects. In my free time, I enjoy games, anime, and movies, which often inspire new ideas. I used to go running on weekends, but these days I feel lazier about going outside and further away from a healthy lifestyle...",
     "self3": "If you are interested in my skills or experience, feel free to contact me. Thank you!",

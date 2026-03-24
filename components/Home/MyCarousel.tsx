@@ -1,6 +1,7 @@
 'use client';
 
 import NextImage from 'next/image';
+import { useTranslations } from 'next-intl';
 import { Carousel } from '@mantine/carousel';
 import { Box } from '@mantine/core';
 
@@ -10,6 +11,8 @@ import imageJson from '@/data/home/image.json';
 import classes from './MyCarousel.module.css';
 
 export default function MyCarousel() {
+  const t = useTranslations('home');
+
   return (
     <Carousel
       mt="sm"
@@ -28,7 +31,7 @@ export default function MyCarousel() {
             <Box className={classes.imageBox}>
               <NextImage
                 src={item.src}
-                alt={item.alt}
+                alt={t(item.altKey as Parameters<typeof t>[0])}
                 fill
                 sizes="(max-width: 640px) 90vw, 42vw"
                 style={{ objectFit: 'contain' }}

@@ -1,6 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { ColorSchemeScript, createTheme, mantineHtmlProps, MantineProvider } from '@mantine/core';
+import { SITE_NAME, SITE_URL } from '@/constants/site';
 import MobileNavbar from './MobileNavbar';
 
 import '@mantine/core/styles.css';
@@ -26,9 +27,9 @@ export async function generateMetadata({ params }: MetadataProps) {
       title: t('title') || 'Gray Resume',
       description: t('description') || 'Personal resume website.',
       type: 'website',
-      locale: locale,
-      url: `https://my-resume-tau-amber.vercel.app/${locale}`,
-      siteName: "Gray's Resume",
+      locale,
+      url: `${SITE_URL}/${locale}`,
+      siteName: SITE_NAME,
     },
   };
 }

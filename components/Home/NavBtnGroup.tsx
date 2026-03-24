@@ -6,8 +6,16 @@ import { FaMoon } from 'react-icons/fa';
 import { MdOutlineWbSunny } from 'react-icons/md';
 import { SiDictionarydotcom } from 'react-icons/si';
 import { Button, Menu, useMantineColorScheme } from '@mantine/core';
-import { Link, usePathname, useRouter } from '@/i18n/routing';
+import { Link, routing, usePathname, useRouter } from '@/i18n/routing';
 import classes from './NavBtnGroup.module.css';
+
+/** 語言 code 對應到 i18n key，新增語言時只需在此處擴充 */
+const localeNameKey: Record<(typeof routing.locales)[number], 'chinese' | 'english' | 'japanese'> =
+  {
+    'zh-TW': 'chinese',
+    en: 'english',
+    ja: 'japanese',
+  };
 
 interface NavBtnGroupProps {
   onLinkClick?: () => void;
@@ -79,7 +87,7 @@ export default function NavBtnGroup({ onLinkClick, mobile = false }: Readonly<Na
         </Button>
       )}
 
-      {/* 語言切換 */}
+      {/* 語言切換：從 routing.locales 動態產生，新增語言只需更新 routing.ts */}
       <Menu trigger="click-hover" openDelay={100} closeDelay={400}>
         <Menu.Target>
           <Button
@@ -92,33 +100,18 @@ export default function NavBtnGroup({ onLinkClick, mobile = false }: Readonly<Na
           </Button>
         </Menu.Target>
         <Menu.Dropdown>
-          <Menu.Item
-            color={locale === 'zh-TW' ? 'blue' : undefined}
-            onClick={() => {
-              handleLanguageChange('zh-TW');
-              onLinkClick?.();
-            }}
-          >
-            {t('chinese')}
-          </Menu.Item>
-          <Menu.Item
-            color={locale === 'en' ? 'blue' : undefined}
-            onClick={() => {
-              handleLanguageChange('en');
-              onLinkClick?.();
-            }}
-          >
-            {t('english')}
-          </Menu.Item>
-          <Menu.Item
-            color={locale === 'ja' ? 'blue' : undefined}
-            onClick={() => {
-              handleLanguageChange('ja');
-              onLinkClick?.();
-            }}
-          >
-            {t('japanese')}
-          </Menu.Item>
+          {routing.locales.map((loc) => (
+            <Menu.Item
+              key={loc}
+              color={locale === loc ? 'blue' : undefined}
+              onClick={() => {
+                handleLanguageChange(loc);
+                onLinkClick?.();
+              }}
+            >
+              {t(localeNameKey[loc])}
+            </Menu.Item>
+          ))}
         </Menu.Dropdown>
       </Menu>
     </>

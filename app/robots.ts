@@ -1,6 +1,5 @@
 import { MetadataRoute } from 'next';
-
-const BASE_URL = 'https://my-resume-tau-amber.vercel.app';
+import { SITE_URL } from '@/constants/site';
 
 /**
  * 自動產生 robots.txt，允許所有爬蟲並指向 sitemap
@@ -11,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: `${BASE_URL}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

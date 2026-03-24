@@ -51,14 +51,14 @@ export default function PortfolioTabs({ items, labels }: Readonly<PortfolioTabsP
 
     return (
       <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg" mt="lg">
-        {filtered.map((item, index) => (
+        {filtered.map((item) => (
           <Card
             className={classes.card}
             shadow="sm"
             padding="lg"
             radius="md"
             withBorder
-            key={`${item.title}-${index}`}
+            key={item.title}
           >
             <Card.Section>
               {/* 固定高度容器確保所有卡片圖片區域一致，objectFit cover 填滿不留白 */}

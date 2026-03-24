@@ -34,5 +34,11 @@
     "icon":"FaFlutter",
     "description":"flutter",
     "level":3
+  },
+  {
+    "title":"Japanese",
+    "icon":"LuBadgeJapaneseYen",
+    "description":"japaneseDesc",
+    "level":2
   }
 ]

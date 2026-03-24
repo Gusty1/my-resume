@@ -1,6 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
+import NextImage from 'next/image';
 import { useTranslations } from 'next-intl';
 import { FaMoon } from 'react-icons/fa';
 import { MdOutlineWbSunny } from 'react-icons/md';
@@ -12,7 +13,6 @@ import {
   Container,
   Flex,
   Group,
-  Image,
   Text,
   Tooltip,
   useMantineColorScheme,
@@ -55,7 +55,13 @@ export default function MobileNavbar({ children }: Readonly<ShellProps>) {
           <Group justify="space-between" style={{ flex: 1 }}>
             <Anchor component={Link} href="/" underline="never" onClick={close}>
               <Flex align="center" gap="xs">
-                <Image radius="md" w="32px" h="32px" src="/images/portfolio/gustyLittleWorld.png" />
+                <NextImage
+                  src="/images/portfolio/gustyLittleWorld.png"
+                  alt="Gray's Resume Logo"
+                  width={32}
+                  height={32}
+                  style={{ borderRadius: 'var(--mantine-radius-md)' }}
+                />
                 <Text size="lg" fw={600}>
                   Gray
                 </Text>
