@@ -1,70 +1,73 @@
 {
   "meta": {
-    "title": "Gray的履歷",
-    "description": "這是 Gray 的個人履歷網站"
+    "title": "Gray 的個人履歷",
+    "description": "歡迎來到 Gray 的個人履歷網站，這裡記錄了我的技術堆疊、專案作品與職涯經歷。"
   },
   "navbar": {
-    "skill": "技能",
+    "skill": "技術技能",
     "portfolio": "作品集",
     "japanese": "日文",
     "chinese": "中文",
     "english": "英文",
-    "language": "語言",
-    "setting": "設定",
+    "language": "切換語言",
+    "setting": "偏好設定",
     "menuOpen": "開啟導覽選單",
     "menuClose": "關閉導覽選單",
     "lightMode": "切換為淺色模式",
     "darkMode": "切換為深色模式"
   },
-  "home":{
+  "home": {
     "home_image_1_alt":"向著夢想飛翔",
     "home_image_2_alt":"努力變得更好",
     "home_image_3_alt":"銀魂",
-    "self1":"你好！我是 Gray，一位熱愛技術的開發者。以前叫Gusty，當時就覺得這個名字很帥，但後來發現不好念也很怪= =",
-    "self2":"我擁有四年的 WEB 全端開發經驗，同時也熱衷於探索 Android 和 Windows 應用開發，有做過幾個小專案。我平常的興趣是遊戲、動漫畫和電影，它們總能激發我一些新想法。以前假日我還會去跑跑步，但現在出門都好懶，跟健康漸行漸遠了...",
-    "self3":"如果您對我的技術或經歷感興趣，非常歡迎您與我聯繫，謝謝！",
-    "experience1":"大學畢業",
-    "experience2":"當兵",
-    "experience3":"當CAM作業員",
-    "experience4":"去資策會上課",
-    "experience5":"JAVA工程師",
-    "experience6":"去台中當JAVA工程師",
-    "experience7":"回家當C#工程師",
-    "experienceTitle":"經歷"
+    "self1": "你好！我是 Gray，一位對技術充滿熱忱的軟體工程師。我喜歡探索各種新技術與優化開發流程，樂於將想法轉化為實用的軟體解決方案。",
+    "self2": "我擁有四年的 Web 全端開發經驗，專精於打造穩定且高效的系統。除了核心的網頁開發外，我也熱衷於延伸技術觸角，曾自主開發過數個 Android 與 Windows 應用的跨平台專案。工作之餘，我熱愛遊戲、動漫畫與電影，這些數位娛樂不僅是我的興趣，也經常激發我在介面設計與使用者體驗上的新靈感。",
+    "self3": "如果您對我的技術背景、專案經歷感興趣，非常歡迎隨時與我聯繫，期待有機會能與貴公司攜手合作，謝謝！",
+    "experience1": "大學畢業",
+    "experience2": "服兵役",
+    "experience3": "CAM 工程人員",
+    "experience4": "資策會 Java 全端工程師就業養成班",
+    "experience5": "Java 軟體工程師",
+    "experience6": "Java 軟體工程師",
+    "experience7": "C# .NET 軟體工程師",
+    "experienceTitle": "職涯經歷"
   },
-  "skill":{
-    "react":"自學一段時間了，工作上有多少用到一點",
-    "java":"以前靠這個吃飯的，但很久沒碰了",
-    "python":"寫小工具會用到一點而已",
-    "csharp":"最近的工作是寫這個的，現在算是我的主力語言",
-    "typescript":"JS寫很多，但TS只有了解，幾乎沒有實際寫過",
-    "flutter":"覺得開發移動端才有未來，所以也是自學一段時間，但最近在工作中有機會用到了",
-    "japanese":"日文",
-    "japaneseDesc":"雖然考過N2但完全沒說過幾句日文..."
+  "skill": {
+    "categoryFrontend": "前端開發",
+    "categoryBackend": "後端開發",
+    "categoryMobile": "行動端開發",
+    "categoryOther": "其他技能 / 語言",
+    "react": "具備自主開發能力，並在實際工作專案中參與部分前端維護與功能開發。",
+    "java": "核心奠基語言，擁有紮實的後端開發經驗，熟悉物件導向架構。",
+    "csharp": "現職主力開發語言，專精於 .NET 生態系，負責核心商務邏輯與後端系統建置。",
+    "typescript": "具備深厚的 JavaScript 基礎，並持續關注與掌握 TypeScript 的強型別開發規範。",
+    "flutter": "看好跨平台行動端開發趨勢而自主投入研究，目前已成功於實際工作專案中導入並落地應用。",
+    "japanese": "日文能力",
+    "japaneseDesc": "已取得日檢 N2 認證，具備良好的閱讀與聽力理解能力，並持續精進口說表達。"
   },
   "notFound": {
     "title": "找不到頁面",
     "description": "您要找的頁面不存在，可能已被移除或網址輸入錯誤。",
     "backHome": "返回首頁"
   },
-  "portfolio":{
-    "web":"網頁",
-    "android":"手機",
-    "windows":"電腦",
-    "other":"其他",
-    "prepare":"準備中",
-    "link":"連結",
-    "order_drink":"React做的，簡易的訂飲料網頁",
-    "order_drink_alt":"訂飲料網頁應用程式的截圖，使用 React 開發",
-    "gusty_little_world":"html+css+js寫的，早期的黑歷史",
-    "gusty_little_world_alt":"GustyのLittle World 個人網站截圖，使用 HTML、CSS、JavaScript 開發",
-    "anime_list":"Flutter做的，可以看有哪些新番的清單",
-    "anime_list_alt":"Anime List 手機應用程式截圖，使用 Flutter 開發，可瀏覽當季新番",
-    "cram_for_interview":"React Native做的，面試的簡易題庫",
-    "cram_for_interview_alt":"面試抱佛腳手機應用程式截圖，使用 React Native 開發的面試題庫",
-    "pc_customizer":"Blazor hybrid做的，爬取原價屋的商品，任意組合菜單",
-    "pc_customizer_alt":"組電腦小幫手桌面應用程式截圖，使用 Blazor Hybrid 開發，可自訂電腦配置",
-    "gusty_dog":"接Gemini api的line機器人",
-    "gusty_dog_alt":"Grayの狗 LINE 機器人截圖，串接 Gemini API"
+  "portfolio": {
+    "web": "網頁應用",
+    "android": "行動應用",
+    "windows": "桌面應用",
+    "other": "其他專案",
+    "prepare": "專案準備中",
+    "link": "專案展示/倉庫",
+    "order_drink": "使用 React 開發的簡易線上訂飲料網頁應用。",
+    "order_drink_alt": "線上訂飲料網頁應用程式截圖，使用 React 進行前端開發。",
+    "gusty_little_world": "早期的個人前端練習專案，使用原生 HTML、CSS 與 JavaScript 撰寫。",
+    "gusty_little_world_alt": "Gusty's Little World 個人網站截圖，為早期的網頁前端練習作品。",
+    "anime_list": "使用 Flutter 開發的跨平台行動應用，提供當季新番動畫清單瀏覽功能。",
+    "anime_list_alt": "Anime List 行動應用程式截圖，使用 Flutter 打造新番瀏覽體驗。",
+    "cram_for_interview": "使用 React Native 開發的行動端專案，打造便於隨時複習的面試題庫工具。",
+    "cram_for_interview_alt": "面試題庫行動應用程式截圖，使用 React Native 進行跨平台開發。",
+    "pc_customizer": "使用 Blazor Hybrid 開發的電腦組裝輔助桌面軟體，支援任意組合配置菜單。",
+    "pc_customizer_alt": "電腦組裝小幫手桌面應用程式截圖，使用 Blazor Hybrid 架構開發。",
+    "gusty_dog": "串接 Gemini API 的 LINE 智慧對話機器人。",
+    "gusty_dog_alt": "Grayの狗 接 Gemini API 的 LINE 機器人。"
   }
 }

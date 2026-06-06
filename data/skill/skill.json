@@ -3,42 +3,42 @@
     "title":"React",
     "icon":"FaReact",
     "description":"react",
-    "level":3
-  },
-  {
-    "title":"Java",
-    "icon":"FaJava",
-    "description":"java",
-    "level":2
-  },
-  {
-    "title":"Python",
-    "icon":"FaPython",
-    "description":"python",
-    "level":1
-  },
-  {
-    "title":"C#",
-    "icon":"TbBrandCSharp",
-    "description":"csharp",
-    "level":4
+    "level":3,
+    "category":"frontend"
   },
   {
     "title":"TypeScript",
     "icon":"SiTypescript",
     "description":"typescript",
-    "level":1
+    "level":1,
+    "category":"frontend"
+  },
+  {
+    "title":"C#",
+    "icon":"TbBrandCSharp",
+    "description":"csharp",
+    "level":4,
+    "category":"backend"
+  },
+  {
+    "title":"Java",
+    "icon":"FaJava",
+    "description":"java",
+    "level":2,
+    "category":"backend"
   },
   {
     "title":"Flutter",
     "icon":"FaFlutter",
     "description":"flutter",
-    "level":3
+    "level":3,
+    "category":"mobile"
   },
   {
     "title":"Japanese",
     "icon":"LuBadgeJapaneseYen",
     "description":"japaneseDesc",
-    "level":2
+    "level":2,
+    "category":"other"
   }
 ]

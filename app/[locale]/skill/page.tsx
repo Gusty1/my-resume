@@ -12,5 +12,12 @@ export default async function SkillPage() {
     translatedDesc: t(item.description as Parameters<typeof t>[0]) || '...',
   }));
 
-  return <SkillContent items={items} />;
+  const categoryLabels: Record<string, string> = {
+    frontend: t('categoryFrontend'),
+    backend: t('categoryBackend'),
+    mobile: t('categoryMobile'),
+    other: t('categoryOther'),
+  };
+
+  return <SkillContent categoryLabels={categoryLabels} items={items} />;
 }

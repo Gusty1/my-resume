@@ -43,10 +43,10 @@ export default function HomeContent({ texts, experiences }: Readonly<HomeContent
     <AnimatedWrapper>
       <Stack gap="xl">
         {/* 自我介紹區塊 */}
-        <Grid gutter="xl">
+        <Grid gap="xl" align="flex-start">
           <Grid.Col span={{ base: 12, md: 7 }}>
             <Stack gap="md">
-              <Title order={2} fw={600}>
+              <Title order={3} fw={600}>
                 {texts.self1}
               </Title>
               <Text size="md" c="dimmed" lh={1.7}>
@@ -92,13 +92,26 @@ export default function HomeContent({ texts, experiences }: Readonly<HomeContent
             </Stack>
           </Grid.Col>
 
-          {/* 經歷時間軸 */}
-          <Grid.Col span={{ base: 12, md: 5 }}>
-            <Paper p="md" radius="md" withBorder>
+          {/* 經歷時間軸：position:relative 撐出佔位，absolute 填滿左欄高度 */}
+          <Grid.Col
+            span={{ base: 12, md: 5 }}
+            style={{ position: 'relative', alignSelf: 'stretch' }}
+          >
+            <Paper
+              p="md"
+              radius="md"
+              withBorder
+              style={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
               <Text fw={500} size="sm" c="dimmed" mb="sm">
                 {texts.experienceTitle}
               </Text>
-              <ScrollArea h={240} type="hover">
+              <ScrollArea type="hover" style={{ flex: 1, minHeight: 0 }}>
                 <Timeline active={0} bulletSize={24} lineWidth={2}>
                   {experiences.map((item) => (
                     <Timeline.Item title={item.title} key={item.date}>

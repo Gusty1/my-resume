@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Grayの履歴書",
-    "description": "これはGrayの個人履歴書サイトです"
+    "description": "Grayの個人履歴書サイトへようこそ。ここでは技術スタック、プロジェクト、キャリア経験を紹介しています。"
   },
   "navbar": {
     "skill": "スキル",
@@ -9,62 +9,65 @@
     "japanese": "日本語",
     "chinese": "中国語",
     "english": "英語",
-    "language": "言語",
+    "language": "言語切替",
     "setting": "設定",
-    "menuOpen": "ナビゲーションメニューを開く",
-    "menuClose": "ナビゲーションメニューを閉じる",
-    "lightMode": "ライトモードに切り替え",
-    "darkMode": "ダークモードに切り替え"
+    "menuOpen": "メニューを開く",
+    "menuClose": "メニューを閉じる",
+    "lightMode": "ライトモードに切替",
+    "darkMode": "ダークモードに切替"
   },
   "home": {
-    "home_image_1_alt": "夢に向かって飛べ",
-    "home_image_2_alt": "より良くなるために",
+    "home_image_1_alt": "夢に向かって飛ぶ",
+    "home_image_2_alt": "より良くなるために努力する",
     "home_image_3_alt": "銀魂",
-    "self1": "こんにちは！私はGrayと申します。技術が大好きな開発者です。以前はGustyという名前を使っていましたが、当時は格好いいと思っていたものの、後になって発音しづらく少し変だと感じました。",
-    "self2": "私は4年間のWebフルスタック開発経験があり、AndroidやWindowsアプリ開発にも興味を持ち、いくつかの小規模プロジェクトを作成しました。趣味はゲーム、アニメ、映画で、新しいアイデアの刺激になります。以前は週末にランニングをしていましたが、最近は外出が億劫になり、健康から遠ざかっています…",
-    "self3": "私の技術や経験にご興味がありましたら、ぜひご連絡ください。よろしくお願いいたします。",
+    "self1": "こんにちは！私はGrayです。技術に情熱を持つソフトウェアエンジニアです。新しい技術の探求や開発プロセスの最適化を楽しみ、アイデアを実用的なソフトウェアへと形にすることが得意です。",
+    "self2": "Webフルスタック開発の経験が4年あり、安定かつ高効率なシステム構築を得意としています。Web開発以外にも、AndroidやWindows向けのクロスプラットフォームアプリを自主開発してきました。趣味はゲーム、アニメ、映画で、UI/UXデザインのインスピレーションにもなっています。",
+    "self3": "私の技術背景やプロジェクトに興味がありましたら、ぜひお気軽にご連絡ください。御社とご一緒できる機会を楽しみにしております。よろしくお願いいたします。",
     "experience1": "大学卒業",
     "experience2": "兵役",
-    "experience3": "CAMオペレーターとして勤務",
-    "experience4": "資策会での研修",
-    "experience5": "Javaエンジニア",
-    "experience6": "台中でJavaエンジニアとして勤務",
-    "experience7": "帰郷してC#エンジニアに",
-    "experienceTitle": "経歴"
+    "experience3": "CAMエンジニア",
+    "experience4": "資策会 Javaフルスタック養成講座",
+    "experience5": "Javaソフトウェアエンジニア",
+    "experience6": "Javaソフトウェアエンジニア",
+    "experience7": "C# .NETソフトウェアエンジニア",
+    "experienceTitle": "職務経歴"
   },
   "skill": {
-    "react": "独学で学び、業務でも一部使用しています",
-    "java": "以前はこれで生計を立てていましたが、長い間触っていません",
-    "python": "小さなツールを書くときに少し使う程度です",
-    "csharp": "最近の業務のメイン言語で、現在の主力です",
-    "typescript": "JavaScriptは多く書いていますが、TypeScriptは理解程度で実務経験はほとんどありません",
-    "flutter": "モバイル開発に将来性を感じて独学しており、最近は業務でも使用する機会があります",
+    "categoryFrontend": "フロントエンド開発",
+    "categoryBackend": "バックエンド開発",
+    "categoryMobile": "モバイル開発",
+    "categoryOther": "その他スキル / 言語",
+    "react": "独立して開発が可能で、実務プロジェクトにおいてフロントエンド保守および機能開発に携わった経験があります。",
+    "java": "基盤となる言語であり、堅実なバックエンド開発経験とオブジェクト指向設計に精通しています。",
+    "csharp": "現職の主力言語であり、.NETエコシステムに精通し、コアビジネスロジックとバックエンド構築を担当しています。",
+    "typescript": "JavaScriptの基礎が強く、TypeScriptの型安全な開発にも継続的に取り組んでいます。",
+    "flutter": "クロスプラットフォーム開発の将来性を見据えて学習し、実務プロジェクトにも導入しています。",
     "japanese": "日本語",
-    "japaneseDesc": "JLPT N2に合格しましたが、実際に日本語を話す機会はほとんどありません"
+    "japaneseDesc": "JLPT N2取得済みで、読解・聴解能力に優れ、会話力も継続的に向上中です。"
   },
   "notFound": {
     "title": "ページが見つかりません",
-    "description": "お探しのページは存在しません。削除されたか、URLが間違っている可能性があります。",
-    "backHome": "ホームへ戻る"
+    "description": "お探しのページは存在しないか、削除された可能性があります。",
+    "backHome": "ホームに戻る"
   },
   "portfolio": {
-    "web": "Web",
-    "android": "モバイル",
-    "windows": "デスクトップ",
-    "other": "その他",
+    "web": "Webアプリ",
+    "android": "モバイルアプリ",
+    "windows": "デスクトップアプリ",
+    "other": "その他プロジェクト",
     "prepare": "準備中",
-    "link": "リンク",
-    "order_drink": "Reactで作成したシンプルなドリンク注文Webアプリ",
-    "order_drink_alt": "Reactで作成したドリンク注文Webアプリのスクリーンショット",
-    "gusty_little_world": "HTML・CSS・JavaScriptで作成した初期の黒歴史作品",
-    "gusty_little_world_alt": "HTML・CSS・JavaScriptで作成したGustyのLittle World個人サイトのスクリーンショット",
-    "anime_list": "Flutterで作成した新番アニメ一覧アプリ",
-    "anime_list_alt": "Flutterで作成した季節アニメ一覧アプリ「Anime List」のスクリーンショット",
-    "cram_for_interview": "React Nativeで作成した面接対策用の簡易問題集アプリ",
-    "cram_for_interview_alt": "React Nativeで作成した面接対策アプリ「面試抱佛腳」のスクリーンショット",
-    "pc_customizer": "Blazor Hybridで作成。原価屋の商品をクロールし、自由に構成できるPCカスタマイザー",
-    "pc_customizer_alt": "Blazor Hybridで作成したPCカスタマイザーデスクトップアプリのスクリーンショット",
-    "gusty_dog": "Gemini APIを連携したLINEボット",
-    "gusty_dog_alt": "Gemini APIを連携したLINEボット「Grayの狗」のスクリーンショット"
+    "link": "プロジェクト / リポジトリ",
+    "order_drink": "Reactで開発した簡単なドリンク注文Webアプリ。",
+    "order_drink_alt": "Reactで開発したドリンク注文アプリの画面。",
+    "gusty_little_world": "HTML・CSS・JavaScriptで作成した初期のフロントエンド練習プロジェクト。",
+    "gusty_little_world_alt": "個人サイトのスクリーンショット。",
+    "anime_list": "Flutterで開発したクロスプラットフォームアプリで、季節アニメ一覧を閲覧可能。",
+    "anime_list_alt": "アニメ一覧アプリの画面。",
+    "cram_for_interview": "React Nativeで開発した面接問題復習用アプリ。",
+    "cram_for_interview_alt": "面接問題アプリの画面。",
+    "pc_customizer": "Blazor Hybridで開発したPC構成支援デスクトップアプリ。",
+    "pc_customizer_alt": "PC構成アプリの画面。",
+    "gusty_dog": "Gemini APIと連携したLINEチャットボット。",
+    "gusty_dog_alt": "LINEチャットボットの画面。"
   }
 }

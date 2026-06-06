@@ -1,11 +1,11 @@
 'use client';
 
-import { FaJava, FaPython, FaQuestionCircle, FaReact } from 'react-icons/fa';
+import { FaJava, FaQuestionCircle, FaReact } from 'react-icons/fa';
 import { FaFlutter } from 'react-icons/fa6';
 import { LuBadgeJapaneseYen } from 'react-icons/lu';
 import { SiTypescript } from 'react-icons/si';
 import { TbBrandCSharp } from 'react-icons/tb';
-import { Flex, Grid, Paper, Rating, Stack, Text } from '@mantine/core';
+import { Badge, Box, Divider, Flex, Grid, Paper, Rating, Stack, Text, Title } from '@mantine/core';
 import AnimatedWrapper from '@/components/AnimatedWrapper';
 
 export interface SkillItem {
@@ -13,14 +13,17 @@ export interface SkillItem {
   icon: string;
   description: string;
   level: number;
+  category: string;
 }
 
 export interface SkillContentProps {
   /** 翻譯後的技能描述陣列，由 Server Component 預先解析 */
   items: (SkillItem & { translatedDesc: string; translatedTitle: string })[];
+  /** 分類標題翻譯 */
+  categoryLabels: Record<string, string>;
 }
 
-// 顏色清單，最多支援 12 種顏色，超過要另外想辦法
+// 顏色清單，最多支援 12 種顏色
 const mantineColorVars = [
   'var(--mantine-color-red-6)',
   'var(--mantine-color-pink-6)',
@@ -53,7 +56,6 @@ const defaultIconSize = 28;
 const iconMap: Record<string, React.ReactNode> = {
   FaReact: <FaReact size={defaultIconSize} color={getStableColor('FaReact')} />,
   FaJava: <FaJava size={defaultIconSize} color={getStableColor('FaJava')} />,
-  FaPython: <FaPython size={defaultIconSize} color={getStableColor('FaPython')} />,
   TbBrandCSharp: <TbBrandCSharp size={defaultIconSize} color={getStableColor('TbBrandCSharp')} />,
   SiTypescript: <SiTypescript size={defaultIconSize} color={getStableColor('SiTypescript')} />,
   FaFlutter: <FaFlutter size={defaultIconSize} color={getStableColor('FaFlutter')} />,
@@ -64,40 +66,70 @@ const iconMap: Record<string, React.ReactNode> = {
 
 const DefaultIcon = <FaQuestionCircle size={defaultIconSize} color="var(--mantine-color-gray-6)" />;
 
+// 分類排序
+const CATEGORY_ORDER = ['frontend', 'backend', 'mobile', 'other'];
+
+// 分類對應的 Badge 顏色
+const categoryColorMap: Record<string, string> = {
+  frontend: 'blue',
+  backend: 'green',
+  mobile: 'violet',
+  other: 'gray',
+};
+
 /**
  * 技能清單的 UI 區塊（Client Component）。
  * 翻譯資料由父層 Server Component 解析後透過 props 傳入。
  */
-export default function SkillContent({ items }: Readonly<SkillContentProps>) {
+export default function SkillContent({ items, categoryLabels }: Readonly<SkillContentProps>) {
+  // 依分類分組
+  const grouped = CATEGORY_ORDER.reduce<Record<string, typeof items>>((acc, cat) => {
+    const filtered = items.filter((item) => item.category === cat);
+    if (filtered.length > 0) acc[cat] = filtered;
+    return acc;
+  }, {});
+
   return (
     <AnimatedWrapper>
-      <Stack gap="sm">
-        {items.map((item) => {
-          const IconComponent = iconMap[item.icon] ?? DefaultIcon;
+      <Stack gap="xl">
+        {Object.entries(grouped).map(([category, skillItems]) => (
+          <Box key={category}>
+            <Flex align="center" gap="sm" mb="md">
+              <Badge color={categoryColorMap[category] ?? 'gray'} size="lg" variant="filled">
+                {categoryLabels[category] ?? category}
+              </Badge>
+              <Divider style={{ flex: 1 }} />
+            </Flex>
+            <Stack gap="sm">
+              {skillItems.map((item) => {
+                const IconComponent = iconMap[item.icon] ?? DefaultIcon;
 
-          return (
-            <Paper key={item.title} p="md" radius="md" withBorder>
-              <Grid align="center" gutter="sm">
-                <Grid.Col span={{ base: 12, sm: 4 }}>
-                  <Flex align="center" gap="sm">
-                    {IconComponent}
-                    <Text fw={500} size="lg">
-                      {item.translatedTitle}
-                    </Text>
-                  </Flex>
-                </Grid.Col>
-                <Grid.Col span={{ base: 12, sm: 4 }}>
-                  <Rating defaultValue={item.level} readOnly size="lg" />
-                </Grid.Col>
-                <Grid.Col span={{ base: 12, sm: 4 }}>
-                  <Text c="dimmed" size="sm">
-                    {item.translatedDesc}
-                  </Text>
-                </Grid.Col>
-              </Grid>
-            </Paper>
-          );
-        })}
+                return (
+                  <Paper key={item.title} p="md" radius="md" withBorder>
+                    <Grid align="center" gap="sm">
+                      <Grid.Col span={{ base: 12, sm: 4 }}>
+                        <Flex align="center" gap="sm">
+                          {IconComponent}
+                          <Text fw={500} size="lg">
+                            {item.translatedTitle}
+                          </Text>
+                        </Flex>
+                      </Grid.Col>
+                      <Grid.Col span={{ base: 12, sm: 4 }}>
+                        <Rating defaultValue={item.level} readOnly size="lg" />
+                      </Grid.Col>
+                      <Grid.Col span={{ base: 12, sm: 4 }}>
+                        <Text c="dimmed" size="sm">
+                          {item.translatedDesc}
+                        </Text>
+                      </Grid.Col>
+                    </Grid>
+                  </Paper>
+                );
+              })}
+            </Stack>
+          </Box>
+        ))}
       </Stack>
     </AnimatedWrapper>
   );

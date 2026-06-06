@@ -2,9 +2,6 @@
 
 import { useEffect, useRef } from 'react';
 import SakanaWidget from 'sakana-widget';
-
-import 'sakana-widget/lib/index.css';
-
 import classes from './SakanaWidgetClient.module.css';
 
 /**
