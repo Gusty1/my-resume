@@ -92,15 +92,17 @@ export default function HomeContent({ texts, experiences }: Readonly<HomeContent
             </Stack>
           </Grid.Col>
 
-          {/* 經歷時間軸：position:relative 撐出佔位，absolute 填滿左欄高度 */}
+          {/* 經歷時間軸：桌面版 absolute 填滿左欄高度，手機版自然展開 */}
           <Grid.Col
             span={{ base: 12, md: 5 }}
             style={{ position: 'relative', alignSelf: 'stretch' }}
           >
+            {/* 桌面版：absolute 填滿，內容可 scroll */}
             <Paper
               p="md"
               radius="md"
               withBorder
+              visibleFrom="md"
               style={{
                 position: 'absolute',
                 inset: 0,
@@ -122,6 +124,22 @@ export default function HomeContent({ texts, experiences }: Readonly<HomeContent
                   ))}
                 </Timeline>
               </ScrollArea>
+            </Paper>
+
+            {/* 手機版：正常流排，完全展開 */}
+            <Paper p="md" radius="md" withBorder hiddenFrom="md">
+              <Text fw={500} size="sm" c="dimmed" mb="sm">
+                {texts.experienceTitle}
+              </Text>
+              <Timeline active={0} bulletSize={24} lineWidth={2}>
+                {experiences.map((item) => (
+                  <Timeline.Item title={item.title} key={item.date}>
+                    <Text size="xs" c="dimmed" mt={2}>
+                      {item.date}
+                    </Text>
+                  </Timeline.Item>
+                ))}
+              </Timeline>
             </Paper>
           </Grid.Col>
         </Grid>

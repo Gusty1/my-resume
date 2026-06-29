@@ -21,11 +21,12 @@
 | Next.js | ^16.2.1 | Framework (App Router) |
 | React | 19.2.4 | UI library |
 | TypeScript | 5.9.3 | Type safety |
-| Mantine | ^8.3.17 | UI component library |
-| next-intl | ^4.8.3 | i18n routing & translations |
-| Framer Motion | ^12.36.0 | Page animations |
+| Mantine | ^9.3.0 | UI component library |
+| next-intl | ^4.13.0 | i18n routing & translations |
+| Framer Motion | ^12.40.0 | Page animations |
 | react-icons | ^5.6.0 | Icon library |
-| sakana-widget | ^2.7.1 | Interactive character widget |
+| sakana-widget | ^3.0.0 | Interactive character widget |
+| yet-another-react-lightbox | ^3.32.0 | Image lightbox with zoom |
 
 ---
 
@@ -52,7 +53,7 @@ my-resume/
 ├── components/
 │   ├── Home/
 │   │   ├── HomeContent.tsx     # Bio, social links, experience timeline (Client)
-│   │   ├── MyCarousel.tsx      # Photo carousel via Mantine Carousel (Client)
+│   │   ├── MyCarousel.tsx      # Photo carousel via Mantine Carousel + lightbox zoom (Client)
 │   │   ├── NavBtnGroup.tsx     # Nav buttons + dark mode + language switcher (Client)
 │   │   ├── MyCarousel.module.css
 │   │   └── NavBtnGroup.module.css
