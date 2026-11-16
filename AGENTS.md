@@ -26,7 +26,6 @@
 | Framer Motion | ^14.14.0 | Page animations |
 | react-icons | ^5.7.0 | Icon library |
 | sakana-widget | ^4.0.0 | Interactive character widget |
-| yet-another-react-lightbox | ^3.33.1 | Image lightbox with zoom |
 
 ---
 
@@ -40,6 +39,8 @@ my-resume/
 │   │   ├── page.tsx            # Home page (Server Component)
 │   │   ├── MobileNavbar.tsx    # Responsive nav (AppShell header + drawer)
 │   │   ├── not-found.tsx       # 404 page
+│   │   ├── opengraph-image.tsx # Link-preview image (English copy; must live beside layout.tsx,
+│   │   │                       #   whose openGraph object would otherwise override it)
 │   │   ├── portfolio/
 │   │   │   ├── page.tsx        # Portfolio page (Server Component)
 │   │   │   ├── PortfolioTabs.tsx   # Tabs: Web / Mobile / Desktop / Other
@@ -53,25 +54,22 @@ my-resume/
 ├── components/
 │   ├── Home/
 │   │   ├── HomeContent.tsx     # Bio, social links, experience timeline (Client)
-│   │   ├── MyCarousel.tsx      # Photo carousel via Mantine Carousel + lightbox zoom (Client)
 │   │   ├── NavBtnGroup.tsx     # Nav buttons + dark mode + language switcher (Client)
-│   │   ├── MyCarousel.module.css
 │   │   └── NavBtnGroup.module.css
 │   ├── AnimatedWrapper.tsx     # Framer Motion fade-in wrapper (Client)
 │   └── SakanaWidgetClient.tsx  # Sakana interactive widget — manual DOM (Client)
 │
 ├── constants/
-│   ├── site.ts                 # SITE_URL, SITE_NAME — used in metadata/SEO
+│   ├── site.ts                 # SITE_URL, SITE_NAME, getCareerYears() — metadata/SEO, 自動年資
 │   └── animeSetting.ts         # containerVariants for Framer Motion
 │
 ├── data/                       # Static JSON — source of truth for content
 │   ├── home/
-│   │   ├── experience.json     # Timeline entries: { title, date }
-│   │   └── image.json          # Carousel images: { altKey, src }
+│   │   └── experience.json     # Timeline entries: { title, date }
 │   ├── portfolio/
 │   │   └── portfolio.json      # Projects: { title, type, src, link?, descriptionKey }
 │   └── skill/
-│       └── skill.json          # Skills: { title, icon, description, level }
+│       └── skill.json          # Skills: { title, icon, description, category }
 │
 ├── i18n/
 │   ├── routing.ts              # defineRouting — locales, defaultLocale
@@ -85,7 +83,6 @@ my-resume/
 ├── public/
 │   ├── favicon.svg
 │   └── images/
-│       ├── home/               # home1.png, home2.png, home3.png
 │       ├── portfolio/          # 6 project screenshots
 │       └── musashi.png         # Sakana Widget character
 │
@@ -175,7 +172,7 @@ All routes are prefixed: `/zh-TW/`, `/en/`, `/ja/`
 |-----------|----------|
 | `meta` | Page title, description |
 | `navbar` | Skill, Portfolio labels; language names |
-| `home` | Self-introduction, experience items, carousel alt text |
+| `home` | Summary (`{years}` 參數), intro, experience items |
 | `skill` | Skill descriptions (referenced by `skill.json`) |
 | `portfolio` | Project descriptions (referenced by `portfolio.json`) |
 | `notFound` | 404 page text |
@@ -186,7 +183,7 @@ Data files reference translation keys, not raw strings:
 
 ```json
 // data/skill/skill.json
-{ "title": "React", "icon": "FaReact", "description": "react", "level": 3 }
+{ "title": "React", "icon": "FaReact", "description": "react", "category": "frontend" }
 //                                                    ^ key into messages/{locale}.json
 ```
 
@@ -212,7 +209,7 @@ interface SkillEntry {
   title: string;       // Display name
   icon: string;        // react-icons identifier (e.g. "FaReact")
   description: string; // Translation key → messages/{locale}.json skill.*
-  level: 1 | 2 | 3 | 4; // Proficiency level (1 = basic, 4 = expert)
+  category: 'frontend' | 'backend' | 'mobile' | 'other'; // Group on the skill page (no self-rating stars)
 }
 ```
 
@@ -239,14 +236,8 @@ interface ExperienceEntry {
 }
 ```
 
-### `data/home/image.json`
-
-```typescript
-interface ImageEntry {
-  altKey: string; // Translation key → messages/{locale}.json home.*
-  src: string;    // Image path under /public/
-}
-```
+The home headline reuses `meta.title` (also the browser tab title). Career years in
+`home.summary` come from `getCareerYears()` in `constants/site.ts` — never hardcode the number.
 
 ---
 

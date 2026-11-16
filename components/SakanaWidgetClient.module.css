@@ -2,8 +2,10 @@
   position: fixed;
   right: 16px;
   bottom: 16px;
-  width: 200px;
-  height: 220px;
+
+  /* autoFit 會依容器縮放角色（最小 120px），維持原本 200:220 的比例 */
+  width: 140px;
+  height: 154px;
   z-index: 999;
 
   /* 在行動裝置（< 768px）隱藏，避免遮擋操作區域 */

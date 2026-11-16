@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Gray's Personal Resume",
-    "description": "Welcome to Gray's personal resume website. Here you can find my tech stack, projects, and career experience."
+    "title": "Gray | .NET Full-Stack Engineer",
+    "description": "Gray's resume: a .NET full-stack engineer working mainly with C# .NET and Java. Skills, portfolio, and career history."
   },
   "navbar": {
     "skill": "Skills",
@@ -17,14 +17,8 @@
     "darkMode": "Switch to dark mode"
   },
   "home": {
-    "home_image_1_alt": "Fly towards dreams",
-    "home_image_2_alt": "Strive to become better",
-    "home_image_3_alt": "Gintama",
-    "self1": "Hello! I'm Gray, a software engineer passionate about technology. I enjoy exploring new technologies and optimizing development processes, turning ideas into practical software solutions.",
-    "self2": "I have four years of experience in full-stack web development, specializing in building stable and efficient systems. Beyond core web development, I also explore other areas, having independently developed several cross-platform Android and Windows applications. In my free time, I enjoy games, anime, and movies, which often inspire my UI/UX design ideas.",
-    "self3": "If you're interested in my technical background and project experience, feel free to contact me. I look forward to the opportunity to collaborate with your company. Thank you!",
-    "experience1": "University Graduation",
-    "experience2": "Military Service",
+    "summary": "{years}+ years of full-stack web development, working mainly with C# .NET and Java, plus React and Flutter on real projects.",
+    "intro": "I care about building stable, maintainable systems. Outside work I keep building web, mobile, and desktop apps (React, Flutter, React Native, Blazor Hybrid) — see my portfolio.",
     "experience3": "CAM Engineer",
     "experience4": "Institute for Information Industry - Java Full-Stack Training Program",
     "experience5": "Java Software Engineer",

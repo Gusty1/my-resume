@@ -7,7 +7,6 @@ import {
   Grid,
   Group,
   Paper,
-  ScrollArea,
   Stack,
   Text,
   Timeline,
@@ -15,7 +14,6 @@ import {
   Tooltip,
 } from '@mantine/core';
 import AnimatedWrapper from '@/components/AnimatedWrapper';
-import MyCarousel from '@/components/Home/MyCarousel';
 
 export interface ExperienceItem {
   title: string;
@@ -25,9 +23,9 @@ export interface ExperienceItem {
 export interface HomeContentProps {
   /** 翻譯後的靜態字串，由 Server Component 預先解析 */
   texts: {
-    self1: string;
-    self2: string;
-    self3: string;
+    headline: string;
+    summary: string;
+    intro: string;
     experienceTitle: string;
   };
   /** 翻譯後的經歷清單 */
@@ -46,14 +44,14 @@ export default function HomeContent({ texts, experiences }: Readonly<HomeContent
         <Grid gap="xl" align="flex-start">
           <Grid.Col span={{ base: 12, md: 7 }}>
             <Stack gap="md">
-              <Title order={3} fw={600}>
-                {texts.self1}
+              <Title order={1} fw={700}>
+                {texts.headline}
               </Title>
-              <Text size="md" c="dimmed" lh={1.7}>
-                {texts.self2}
+              <Text size="lg" fw={500} lh={1.6}>
+                {texts.summary}
               </Text>
-              <Text size="md" lh={1.7}>
-                {texts.self3}
+              <Text size="md" c="dimmed" lh={1.7}>
+                {texts.intro}
               </Text>
 
               {/* 社交連結 */}
@@ -92,42 +90,9 @@ export default function HomeContent({ texts, experiences }: Readonly<HomeContent
             </Stack>
           </Grid.Col>
 
-          {/* 經歷時間軸：桌面版 absolute 填滿左欄高度，手機版自然展開 */}
-          <Grid.Col
-            span={{ base: 12, md: 5 }}
-            style={{ position: 'relative', alignSelf: 'stretch' }}
-          >
-            {/* 桌面版：absolute 填滿，內容可 scroll */}
-            <Paper
-              p="md"
-              radius="md"
-              withBorder
-              visibleFrom="md"
-              style={{
-                position: 'absolute',
-                inset: 0,
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <Text fw={500} size="sm" c="dimmed" mb="sm">
-                {texts.experienceTitle}
-              </Text>
-              <ScrollArea type="hover" style={{ flex: 1, minHeight: 0 }}>
-                <Timeline active={0} bulletSize={24} lineWidth={2}>
-                  {experiences.map((item) => (
-                    <Timeline.Item title={item.title} key={item.date}>
-                      <Text size="xs" c="dimmed" mt={2}>
-                        {item.date}
-                      </Text>
-                    </Timeline.Item>
-                  ))}
-                </Timeline>
-              </ScrollArea>
-            </Paper>
-
-            {/* 手機版：正常流排，完全展開 */}
-            <Paper p="md" radius="md" withBorder hiddenFrom="md">
+          {/* 經歷時間軸：完整展開，不需捲動就能看到所有經歷 */}
+          <Grid.Col span={{ base: 12, md: 5 }}>
+            <Paper p="md" radius="md" withBorder>
               <Text fw={500} size="sm" c="dimmed" mb="sm">
                 {texts.experienceTitle}
               </Text>
@@ -143,9 +108,6 @@ export default function HomeContent({ texts, experiences }: Readonly<HomeContent
             </Paper>
           </Grid.Col>
         </Grid>
-
-        {/* 照片輪播 */}
-        <MyCarousel />
       </Stack>
     </AnimatedWrapper>
   );

@@ -21,6 +21,8 @@ export async function generateMetadata({ params }: MetadataProps) {
   const t = await getTranslations({ locale, namespace: 'meta' });
 
   return {
+    // 讓 opengraph-image 等相對路徑輸出成完整網址，社群平台才抓得到預覽圖
+    metadataBase: new URL(SITE_URL),
     title: t('title') || 'Gray Resume',
     description: t('description') || 'Personal resume website.',
     openGraph: {
@@ -38,6 +40,8 @@ export async function generateMetadata({ params }: MetadataProps) {
 const theme = createTheme({
   primaryColor: 'cyan',
   defaultRadius: 'md',
+  // Mantine 9.8 起按鈕類元件的游標改由 cursorType 決定（預設 default），明確指定為手指
+  cursorType: 'pointer',
   headings: {
     fontWeight: '600',
   },

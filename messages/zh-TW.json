@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Gray 的個人履歷",
-    "description": "歡迎來到 Gray 的個人履歷網站，這裡記錄了我的技術堆疊、專案作品與職涯經歷。"
+    "title": "Gray｜.NET 全端工程師",
+    "description": "Gray 的個人履歷：.NET 全端工程師，工作以 C# .NET 與 Java 為主，收錄技術技能、作品集與職涯經歷。"
   },
   "navbar": {
     "skill": "技術技能",
@@ -17,14 +17,8 @@
     "darkMode": "切換為深色模式"
   },
   "home": {
-    "home_image_1_alt":"向著夢想飛翔",
-    "home_image_2_alt":"努力變得更好",
-    "home_image_3_alt":"銀魂",
-    "self1": "你好！我是 Gray，一位對技術充滿熱忱的軟體工程師。我喜歡探索各種新技術與優化開發流程，樂於將想法轉化為實用的軟體解決方案。",
-    "self2": "我擁有四年的 Web 全端開發經驗，專精於打造穩定且高效的系統。除了核心的網頁開發外，我也熱衷於延伸技術觸角，曾自主開發過數個 Android 與 Windows 應用的跨平台專案。工作之餘，我熱愛遊戲、動漫畫與電影，這些數位娛樂不僅是我的興趣，也經常激發我在介面設計與使用者體驗上的新靈感。",
-    "self3": "如果您對我的技術背景、專案經歷感興趣，非常歡迎隨時與我聯繫，期待有機會能與貴公司攜手合作，謝謝！",
-    "experience1": "大學畢業",
-    "experience2": "服兵役",
+    "summary": "{years} 年以上 Web 全端開發經驗，工作上以 C# .NET 與 Java 為主，也在專案中使用 React 與 Flutter。",
+    "intro": "重視系統的穩定與可維護性。工作之外也持續自主開發網頁、行動與桌面應用（React、Flutter、React Native、Blazor Hybrid），歡迎參考作品集。",
     "experience3": "CAM 工程人員",
     "experience4": "資策會 Java 全端工程師就業養成班",
     "experience5": "Java 軟體工程師",

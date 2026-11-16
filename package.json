@@ -16,7 +16,6 @@
     "test": "npm run prettier:check && npm run lint && npm run typecheck"
   },
   "dependencies": {
-    "@mantine/carousel": "^9.8.1",
     "@mantine/core": "^9.8.1",
     "@mantine/hooks": "^9.8.1",
     "framer-motion": "^14.14.0",
@@ -25,8 +24,7 @@
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-icons": "^5.7.0",
-    "sakana-widget": "^4.0.0",
-    "yet-another-react-lightbox": "^3.33.1"
+    "sakana-widget": "^4.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.7",

@@ -5,14 +5,13 @@ import { FaFlutter } from 'react-icons/fa6';
 import { LuBadgeJapaneseYen } from 'react-icons/lu';
 import { SiTypescript } from 'react-icons/si';
 import { TbBrandCSharp } from 'react-icons/tb';
-import { Badge, Box, Divider, Flex, Grid, Paper, Rating, Stack, Text } from '@mantine/core';
+import { Badge, Box, Divider, Flex, Grid, Paper, Stack, Text } from '@mantine/core';
 import AnimatedWrapper from '@/components/AnimatedWrapper';
 
 export interface SkillItem {
   title: string;
   icon: string;
   description: string;
-  level: number;
   category: string;
 }
 
@@ -117,10 +116,7 @@ export default function SkillContent({ items, categoryLabels }: Readonly<SkillCo
                           </Text>
                         </Flex>
                       </Grid.Col>
-                      <Grid.Col span={{ base: 12, sm: 4 }}>
-                        <Rating defaultValue={item.level} readOnly size="lg" />
-                      </Grid.Col>
-                      <Grid.Col span={{ base: 12, sm: 4 }}>
+                      <Grid.Col span={{ base: 12, sm: 8 }}>
                         <Text c="dimmed" size="sm">
                           {item.translatedDesc}
                         </Text>

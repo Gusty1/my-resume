@@ -1,9 +1,0 @@
-.imageBox {
-  position: relative;
-  height: 360px;
-}
-
-/* 覆寫 Mantine Carousel indicator 顏色，確保淺色主題可見 */
-:global(.m_eae68602) {
-  background-color: var(--mantine-color-dark-4);
-}
