@@ -1,6 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
+import dynamic from 'next/dynamic';
 import NextImage from 'next/image';
 import { useTranslations } from 'next-intl';
 import { FaMoon } from 'react-icons/fa';
@@ -19,8 +20,12 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import NavBtnGroup from '@/components/Home/NavBtnGroup';
-import SakanaWidgetClient from '@/components/SakanaWidgetClient';
 import { Link } from '@/i18n/routing';
+
+// sakana-widget v4 在模組載入時就存取 window，只能在瀏覽器端載入
+const SakanaWidgetClient = dynamic(() => import('@/components/SakanaWidgetClient'), {
+  ssr: false,
+});
 
 // 3. 定義 props，需要接收 children
 interface ShellProps {

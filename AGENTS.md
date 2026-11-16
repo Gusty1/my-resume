@@ -18,15 +18,15 @@
 
 | Tech | Version | Role |
 |------|---------|------|
-| Next.js | ^16.2.1 | Framework (App Router) |
-| React | 19.2.4 | UI library |
-| TypeScript | 5.9.3 | Type safety |
-| Mantine | ^9.3.0 | UI component library |
-| next-intl | ^4.13.0 | i18n routing & translations |
-| Framer Motion | ^12.40.0 | Page animations |
-| react-icons | ^5.6.0 | Icon library |
-| sakana-widget | ^3.0.0 | Interactive character widget |
-| yet-another-react-lightbox | ^3.32.0 | Image lightbox with zoom |
+| Next.js | ^16.4.6 | Framework (App Router) |
+| React | ^19.3.1 | UI library |
+| TypeScript | 5.9.3 | Type safety (typescript-eslint 尚未支援 TS 7) |
+| Mantine | ^9.8.1 | UI component library |
+| next-intl | ^4.15.1 | i18n routing & translations |
+| Framer Motion | ^14.14.0 | Page animations |
+| react-icons | ^5.7.0 | Icon library |
+| sakana-widget | ^4.0.0 | Interactive character widget |
+| yet-another-react-lightbox | ^3.33.1 | Image lightbox with zoom |
 
 ---
 
@@ -295,7 +295,8 @@ The animation config (`containerVariants`) lives in `constants/animeSetting.ts`.
 
 `SakanaWidgetClient.tsx` uses **manual DOM management** (`useRef` + `sakana.mount()`).
 Do not attempt to control it through React state — it manages its own lifecycle.
-It is rendered inside `layout.tsx` outside `<AppShell.Main>`.
+It is rendered by `MobileNavbar.tsx` via `next/dynamic` with `ssr: false` —
+sakana-widget v4 touches `window` at module load, so a static import crashes SSR (HTTP 500).
 
 ### Language Switcher
 

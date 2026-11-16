@@ -6,6 +6,7 @@ import tseslint from 'typescript-eslint';
 export default defineConfig(
   tseslint.configs.recommended,
   ...mantine,
+  { ignores: ['.next/**', '**/*.{mjs,cjs,js,d.ts}'] },
   {
     languageOptions: {
       parserOptions: {

@@ -5,7 +5,7 @@ import { FaFlutter } from 'react-icons/fa6';
 import { LuBadgeJapaneseYen } from 'react-icons/lu';
 import { SiTypescript } from 'react-icons/si';
 import { TbBrandCSharp } from 'react-icons/tb';
-import { Badge, Box, Divider, Flex, Grid, Paper, Rating, Stack, Text, Title } from '@mantine/core';
+import { Badge, Box, Divider, Flex, Grid, Paper, Rating, Stack, Text } from '@mantine/core';
 import AnimatedWrapper from '@/components/AnimatedWrapper';
 
 export interface SkillItem {
@@ -85,7 +85,9 @@ export default function SkillContent({ items, categoryLabels }: Readonly<SkillCo
   // 依分類分組
   const grouped = CATEGORY_ORDER.reduce<Record<string, typeof items>>((acc, cat) => {
     const filtered = items.filter((item) => item.category === cat);
-    if (filtered.length > 0) acc[cat] = filtered;
+    if (filtered.length > 0) {
+      acc[cat] = filtered;
+    }
     return acc;
   }, {});
 
