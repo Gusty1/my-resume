@@ -2,18 +2,11 @@
 
 import { FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
 import { IoMdMail } from 'react-icons/io';
-import {
-  ActionIcon,
-  Grid,
-  Group,
-  Paper,
-  Stack,
-  Text,
-  Timeline,
-  Title,
-  Tooltip,
-} from '@mantine/core';
+import { Button, Grid, Group, Paper, Stack, Text, Timeline, Title } from '@mantine/core';
 import AnimatedWrapper from '@/components/AnimatedWrapper';
+
+const CONTACT_EMAIL = 'a0985209465@gmail.com';
+const GITHUB_URL = 'https://github.com/Gusty1';
 
 export interface ExperienceItem {
   title: string;
@@ -26,6 +19,8 @@ export interface HomeContentProps {
     headline: string;
     summary: string;
     intro: string;
+    contactEmail: string;
+    location: string;
     experienceTitle: string;
   };
   /** 翻譯後的經歷清單 */
@@ -54,38 +49,37 @@ export default function HomeContent({ texts, experiences }: Readonly<HomeContent
                 {texts.intro}
               </Text>
 
-              {/* 社交連結 */}
-              <Group gap="md" mt="xs">
-                <Tooltip label="a0985209465@gmail.com" withArrow>
-                  <ActionIcon
-                    component="a"
-                    href="mailto:a0985209465@gmail.com"
-                    variant="subtle"
-                    color="gray"
-                    size="lg"
-                    radius="xl"
-                  >
-                    <IoMdMail size={20} />
-                  </ActionIcon>
-                </Tooltip>
-                <Tooltip label="Gusty1" withArrow>
-                  <ActionIcon
-                    component="a"
-                    href="https://github.com/Gusty1"
-                    target="_blank"
-                    variant="subtle"
-                    color="gray"
-                    size="lg"
-                    radius="xl"
-                  >
-                    <FaGithub size={20} />
-                  </ActionIcon>
-                </Tooltip>
-                <Tooltip label="Taoyuan" withArrow>
-                  <ActionIcon variant="subtle" color="gray" size="lg" radius="xl">
-                    <FaMapMarkerAlt size={18} />
-                  </ActionIcon>
-                </Tooltip>
+              {/* 聯絡方式：主要按鈕 + GitHub；地址直接顯示，避免訪客沒有設定郵件程式時 mailto 無反應 */}
+              <Group gap="sm" mt="xs">
+                <Button
+                  component="a"
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  radius="xl"
+                  leftSection={<IoMdMail size={18} />}
+                >
+                  {texts.contactEmail}
+                </Button>
+                <Button
+                  component="a"
+                  href={GITHUB_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="default"
+                  radius="xl"
+                  leftSection={<FaGithub size={18} />}
+                >
+                  GitHub
+                </Button>
+              </Group>
+              <Group gap="lg" c="dimmed">
+                <Group gap={6}>
+                  <IoMdMail size={14} />
+                  <Text size="sm">{CONTACT_EMAIL}</Text>
+                </Group>
+                <Group gap={6}>
+                  <FaMapMarkerAlt size={14} />
+                  <Text size="sm">{texts.location}</Text>
+                </Group>
               </Group>
             </Stack>
           </Grid.Col>

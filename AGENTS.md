@@ -67,7 +67,7 @@ my-resume/
 │   ├── home/
 │   │   └── experience.json     # Timeline entries: { title, date }
 │   ├── portfolio/
-│   │   └── portfolio.json      # Projects: { title, type, src, link?, descriptionKey }
+│   │   └── portfolio.json      # Projects: { title, description, altText, link, image, type, tags }
 │   └── skill/
 │       └── skill.json          # Skills: { title, icon, description, category }
 │
@@ -219,11 +219,13 @@ Icons are resolved in `skill/page.tsx` via `iconMap` (dynamic import from react-
 
 ```typescript
 interface PortfolioEntry {
-  title: string;          // Project name
+  title: string;       // Project name
+  description: string; // Translation key → messages/{locale}.json portfolio.*
+  altText: string;     // Translation key for the image alt text
+  link: string;        // URL, or "" if not publicly available (button is hidden)
+  image: string;       // Image path under /public/images/portfolio/
   type: 'web' | 'android' | 'windows' | 'other'; // Tab category
-  src: string;            // Image path under /public/images/portfolio/
-  link?: string;          // Optional URL (omit if not publicly available)
-  descriptionKey: string; // Translation key → messages/{locale}.json portfolio.*
+  tags: string[];      // Tech badges (proper nouns, not translated) — keep accurate to the repo
 }
 ```
 
@@ -324,7 +326,7 @@ import experienceJson from '@/data/home/experience.json';
 ### Add a new portfolio project
 
 1. Add entry to `data/portfolio/portfolio.json`
-2. Add `descriptionKey` translations to all three `messages/*.json` under `portfolio`
+2. Add `description` and `altText` translations to all three `messages/*.json` under `portfolio`
 3. Add project image to `public/images/portfolio/`
 
 ### Add a new skill

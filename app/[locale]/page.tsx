@@ -12,6 +12,8 @@ export default async function HomePage() {
     headline: tMeta('title'),
     summary: t('summary', { years: getCareerYears() }),
     intro: t('intro'),
+    contactEmail: t('contactEmail'),
+    location: t('location'),
     experienceTitle: t('experienceTitle'),
   };
 

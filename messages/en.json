@@ -19,6 +19,8 @@
   "home": {
     "summary": "{years}+ years of full-stack web development, working mainly with C# .NET and Java, plus React and Flutter on real projects.",
     "intro": "I care about building stable, maintainable systems. Outside work I keep building web, mobile, and desktop apps (React, Flutter, React Native, Blazor Hybrid) — see my portfolio.",
+    "contactEmail": "Email me",
+    "location": "Taoyuan, Taiwan",
     "experience3": "CAM Engineer",
     "experience4": "Institute for Information Industry - Java Full-Stack Training Program",
     "experience5": "Java Software Engineer",
@@ -53,8 +55,6 @@
     "link": "Project Demo/Repository",
     "order_drink": "A simple online drink ordering web app built with React.",
     "order_drink_alt": "Screenshot of drink ordering web app built with React.",
-    "gusty_little_world": "An early personal frontend practice project using HTML, CSS, and JavaScript.",
-    "gusty_little_world_alt": "Screenshot of Gusty's Little World personal website.",
     "anime_list": "A cross-platform mobile app built with Flutter for browsing seasonal anime.",
     "anime_list_alt": "Screenshot of Anime List mobile app.",
     "cram_for_interview": "A mobile app built with React Native for reviewing interview questions anytime.",

@@ -6,7 +6,7 @@ import { HiOutlineDotsHorizontal } from 'react-icons/hi';
 import { IoLogoAndroid } from 'react-icons/io';
 import { IoLink } from 'react-icons/io5';
 import { MdOutlineWebAsset } from 'react-icons/md';
-import { Button, Card, Group, SimpleGrid, Tabs, Text } from '@mantine/core';
+import { Badge, Button, Card, Group, SimpleGrid, Tabs, Text } from '@mantine/core';
 import classes from './PortfolioPage.module.css';
 
 export interface PortfolioItem {
@@ -16,6 +16,8 @@ export interface PortfolioItem {
   link: string;
   image: string;
   type: string;
+  /** 使用的技術（專有名詞，不需翻譯） */
+  tags: string[];
 }
 
 export interface PortfolioTabsProps {
@@ -77,6 +79,15 @@ export default function PortfolioTabs({ items, labels }: Readonly<PortfolioTabsP
               <Text fw={500} size="lg">
                 {item.title}
               </Text>
+            </Group>
+
+            {/* 技術標籤：tt="none" 保留原始大小寫（如 Socket.IO、.NET MAUI） */}
+            <Group gap={6} mb="sm">
+              {item.tags.map((tag) => (
+                <Badge key={tag} variant="light" color="gray" radius="sm" tt="none">
+                  {tag}
+                </Badge>
+              ))}
             </Group>
 
             {/* flex: 1 讓描述區塊撐開，把按鈕推到卡片底部 */}

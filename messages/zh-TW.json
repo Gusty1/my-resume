@@ -19,6 +19,8 @@
   "home": {
     "summary": "{years} 年以上 Web 全端開發經驗，工作上以 C# .NET 與 Java 為主，也在專案中使用 React 與 Flutter。",
     "intro": "重視系統的穩定與可維護性。工作之外也持續自主開發網頁、行動與桌面應用（React、Flutter、React Native、Blazor Hybrid），歡迎參考作品集。",
+    "contactEmail": "寄信聯絡我",
+    "location": "台灣・桃園",
     "experience3": "CAM 工程人員",
     "experience4": "資策會 Java 全端工程師就業養成班",
     "experience5": "Java 軟體工程師",
@@ -53,8 +55,6 @@
     "link": "專案展示/倉庫",
     "order_drink": "使用 React 開發的簡易線上訂飲料網頁應用。",
     "order_drink_alt": "線上訂飲料網頁應用程式截圖，使用 React 進行前端開發。",
-    "gusty_little_world": "早期的個人前端練習專案，使用原生 HTML、CSS 與 JavaScript 撰寫。",
-    "gusty_little_world_alt": "Gusty's Little World 個人網站截圖，為早期的網頁前端練習作品。",
     "anime_list": "使用 Flutter 開發的跨平台行動應用，提供當季新番動畫清單瀏覽功能。",
     "anime_list_alt": "Anime List 行動應用程式截圖，使用 Flutter 打造新番瀏覽體驗。",
     "cram_for_interview": "使用 React Native 開發的行動端專案，打造便於隨時複習的面試題庫工具。",

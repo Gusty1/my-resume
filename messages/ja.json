@@ -19,6 +19,8 @@
   "home": {
     "summary": "Web フルスタック開発歴 {years} 年以上。業務では C# .NET と Java を中心に、React や Flutter も使用しています。",
     "intro": "安定性と保守性の高いシステムづくりを大切にしています。業務外でも Web・モバイル・デスクトップアプリ（React、Flutter、React Native、Blazor Hybrid）を個人開発しています。ぜひポートフォリオもご覧ください。",
+    "contactEmail": "メールで連絡",
+    "location": "台湾・桃園",
     "experience3": "CAMエンジニア",
     "experience4": "資策会 Javaフルスタック養成講座",
     "experience5": "Javaソフトウェアエンジニア",
@@ -53,8 +55,6 @@
     "link": "プロジェクト / リポジトリ",
     "order_drink": "Reactで開発した簡単なドリンク注文Webアプリ。",
     "order_drink_alt": "Reactで開発したドリンク注文アプリの画面。",
-    "gusty_little_world": "HTML・CSS・JavaScriptで作成した初期のフロントエンド練習プロジェクト。",
-    "gusty_little_world_alt": "個人サイトのスクリーンショット。",
     "anime_list": "Flutterで開発したクロスプラットフォームアプリで、季節アニメ一覧を閲覧可能。",
     "anime_list_alt": "アニメ一覧アプリの画面。",
     "cram_for_interview": "React Nativeで開発した面接問題復習用アプリ。",
